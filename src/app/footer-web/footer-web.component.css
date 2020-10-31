@@ -1,0 +1,46 @@
+.footer-web {
+    margin-top: 60px;
+    background-color: black;
+}
+
+.footer-wrapper {
+    padding-left: 60px;
+    padding-right: 60px;
+    padding-top: 30px;
+}
+
+.logo {
+    font-size: 32px;
+    color: #0099CC;
+}
+
+.link-page {
+    text-align: right;
+    font-size: 32px;
+}
+.link-page a {
+    margin-right: 20px;
+    color: white;
+}
+
+.content-footer {
+    margin-top: 10px;
+}
+
+.title-footer div {
+    font-size: 24px;
+    color: white;
+}
+
+.list-fortmat {
+    margin-left: -40px;
+}
+
+.list-fortmat li{
+    list-style-type: none;
+    color: #D6D6D6;
+}
+
+.list-fortmat li span {
+    color: white;
+}

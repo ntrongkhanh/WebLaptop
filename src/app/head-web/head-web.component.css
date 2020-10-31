@@ -1,0 +1,47 @@
+/*bootstrap css*/
+.navbar {
+    padding: 0;
+    height: 64px;
+}
+/******************/
+.icon-inheader{
+    color: #70DBFF;
+    font-size: 1.5rem;
+    height: 100%;
+}
+.container{
+    max-width: 1280px;
+    padding: 0;
+}
+.icon-inheader i {
+    color: #70DBFF;
+    font-size: 1.5rem;
+    display: inline;
+    padding-left: 5px;
+}
+.text-inheader{
+    display: inline;
+    color: #70DBFF;
+    font-size: 16px;
+    padding-left: 5px;
+}
+
+.left-header {
+    
+}
+.right-header {
+    
+}
+.logo-container {
+    color: #0099CC;
+    font-size: 32px;
+    height: 100%;
+    text-align: center;
+}
+.logo{
+    transform: translateY(0.5rem);
+}
+
+.search-input {
+    border-radius: 20px;
+}

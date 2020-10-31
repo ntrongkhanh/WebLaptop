@@ -1,0 +1,46 @@
+.intro-lap-area-wrapper {
+    width: 1194px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1rem;
+}
+
+.intro-lap-area-wrapper p {
+    color: #0099CC;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.title-price {
+    font-size: 16px !important; 
+    color: #15697F; 
+    display: inline;
+    margin-right: 20px;
+}
+.price-caterogy {
+    margin-bottom: 10px;
+}
+.price-caterogy button{
+    border: none;
+    border-radius: 20px;
+    display: inline;
+    background-color: #D6D6D6;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-right: 10px;
+}
+
+.list-laptop {
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    grid-template-rows: auto;
+}
+
+.view-more-btn {
+    color: #15697F;
+    border: 2px solid #0099CC;
+    border-radius: 20px;
+    width: 190px;
+    margin-top: 1rem;
+}

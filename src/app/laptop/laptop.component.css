@@ -1,0 +1,29 @@
+.laptop-item {
+    background-color: white;
+    width: 230px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.laptop-item p {
+    margin-bottom: 0;
+}
+
+.info-wrapper {
+    padding: 20px;
+}
+
+.laptop-name {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.laptop-config {
+    font-size: 14px;
+}
+
+.laptop-price {
+    font-size: 14px;
+    font-weight: bold;
+    color: #D44848;
+}
