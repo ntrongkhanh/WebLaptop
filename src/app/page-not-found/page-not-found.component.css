@@ -1,0 +1,9 @@
+.text-not-found {
+    height: 100vh;
+    line-height: 100vh;
+    background-color: #0000CD;
+    font-size: 50px;
+    color: white;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+}
