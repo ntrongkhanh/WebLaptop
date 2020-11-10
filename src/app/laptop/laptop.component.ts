@@ -9,6 +9,10 @@ export class LaptopComponent implements OnInit {
 
   constructor() { }
 
+  name ="";
+  config="";
+  price;
+  
   ngOnInit(): void {
   }
 

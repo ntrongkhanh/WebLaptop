@@ -1,9 +1,9 @@
 .laptop-item {
     background-color: white;
-    width: 230px;
+    width: auto;
     border-radius: 10px;
-    margin-top: 10px;
 }
+
 
 .laptop-item p {
     margin-bottom: 0;

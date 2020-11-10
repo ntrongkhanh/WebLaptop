@@ -2,3 +2,24 @@
 .property-web {
     background-color: #F4F4F4;
 }
+
+.view-more-btn {
+    display: block;
+    color: #15697F;
+    border: 2px solid #0099CC;
+    border-radius: 20px;
+    width: 190px;
+    margin-top: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.view-more-btn:hover{
+    color: white;
+    background-color: #0099CC;
+    border: 2px solid #0099CC;
+}
+
+.logo {
+    font-weight: 600;
+}

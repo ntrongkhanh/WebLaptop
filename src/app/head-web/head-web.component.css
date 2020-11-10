@@ -3,35 +3,59 @@
     padding: 0;
     height: 64px;
 }
+.navbar-dark{
+    background-color: #000;
+}
+
 /******************/
 .icon-inheader{
     color: #70DBFF;
-    font-size: 1.5rem;
     height: 100%;
+    display: inline-block;
+    vertical-align: middle;
 }
 .container{
-    max-width: 1280px;
+    max-width: 1250px;
     padding: 0;
 }
 .icon-inheader i {
     color: #70DBFF;
-    font-size: 1.5rem;
-    display: inline;
+    font-size: 1.4rem;
+    display: inline-block;
+    vertical-align: middle;
     padding-left: 5px;
 }
+.icon-inheader span {
+    display: inline-block;
+    vertical-align: middle;
+}
+
 .text-inheader{
     display: inline;
     color: #70DBFF;
-    font-size: 16px;
+    font-size: 18px;
     padding-left: 5px;
 }
 
-.left-header {
-    
+.icon-left {
+    justify-content: flex-start;
 }
-.right-header {
-    
+
+.icon-left .icon-inheader:first-child {
+    margin-right: 32px;
 }
+
+.icon-right {
+    justify-content: flex-end;
+}
+
+.icon-right .icon-inheader{
+    margin-left: 32px;
+}
+.icon-right .icon-inheader:last-child{
+    margin-right: 16px;
+}
+
 .logo-container {
     color: #0099CC;
     font-size: 32px;

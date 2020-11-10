@@ -4,13 +4,14 @@
 }
 
 .footer-wrapper {
-    padding-left: 60px;
-    padding-right: 60px;
     padding-top: 30px;
+}
+.container{
+    max-width: 1250px;
 }
 
 .logo {
-    font-size: 32px;
+    font-size: 48px;
     color: #0099CC;
 }
 
