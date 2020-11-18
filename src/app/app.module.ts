@@ -15,6 +15,7 @@ import { PageHomeComponent } from './page-home/page-home.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { BodyCategoryPageComponent } from './body-category-page/body-category-page.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
+import { SidebarWebComponent } from './sidebar-web/sidebar-web.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
     PageHomeComponent,
     PageNotFoundComponent,
     BodyCategoryPageComponent,
-    ProductDetailComponent
+    ProductDetailComponent,
+    SidebarWebComponent
   ],
   imports: [
     BrowserModule,

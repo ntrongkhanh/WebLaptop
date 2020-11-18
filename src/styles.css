@@ -1,4 +1,33 @@
 /* You can add global styles to this file, and also import other style files */
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    -webkit-box-sizing:border-box;
+}
+
+::-webkit-input-placeholder {
+    color: #70DBFF !important;
+    opacity: 0.5 !important;
+}
+:-moz-placeholder {
+    color: #70DBFF !important;
+    opacity: 0.5 !important;
+}
+::-moz-placeholder {
+    color: #70DBFF !important;
+    opacity: 0.5 !important;
+}
+:-ms-input-placeholder {  
+    color: #70DBFF !important;
+    opacity: 0.5 !important;
+}
+::placeholder {  
+    font-style: italic; 
+    color: #70DBFF !important;
+    opacity: 0.5 !important;
+}
+
 .property-web {
     background-color: #F4F4F4;
 }
@@ -20,6 +49,43 @@
     border: 2px solid #0099CC;
 }
 
+.logo-container {
+    display: flex;
+    justify-content: flex-start;
+    color: #0099CC;
+    font-size: 32px;
+}
+
 .logo {
     font-weight: 600;
+    
+}
+
+.logo p{
+    display: inline-block;
+    margin-bottom: 0px;
+}
+
+body {
+    padding-top: 56px;
+}
+
+@media screen and (max-width: 1026px) {
+
+    .open-sidebar-btn {
+        margin-left: 16px;
+        display: inline-block;
+        background-color: transparent;
+        color: #D6D6D6;
+        border: none;
+        outline: none;
+    }
+
+    .icon-left {
+        display: none;
+    }
+
+    .logo-container {
+        margin-left: -16px;
+    }
 }
