@@ -2,15 +2,16 @@
     background-color: white;
     width: auto;
     border-radius: 10px;
+    cursor: pointer;
+    transition: .3s;
 }
-
 
 .laptop-item p {
     margin-bottom: 0;
 }
 
-.info-wrapper {
-    padding: 20px;
+.img-wrapper {
+    padding: 16px 16px 0 16px;
 }
 
 .laptop-name {
@@ -26,4 +27,73 @@
     font-size: 14px;
     font-weight: bold;
     color: #D44848;
+}
+
+.laptop-item .img-wrapper img{
+    z-index: 0;
+    transition: .2s;
+}
+
+.laptop-item:hover {
+    box-shadow: 0px 0px 6px #8f8f8f;
+}
+
+.laptop-item:hover .img-wrapper img {
+    transform: translateY(-15px);
+}
+
+.btn-add-to-cart {
+    position: relative;
+    width: 100%;
+    visibility: hidden;
+    transform: translateY(-20px);
+    margin-bottom: -28px;
+    padding: 0px 0px 0px 0px;
+    transition: 0s;
+}
+
+.btn-add-to-cart button {
+    background-color: #0099CC;
+    color: white;
+    border: none;
+    outline: none;
+    width: 100%;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    /* border-radius: 18px; */
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.btn-add-to-cart button :focus{
+    outline: none;
+}
+
+.laptop-detail {
+    z-index: 3;
+    background-color: none;
+    padding: 8px 0px 8px 0px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    transition: .2s;
+}
+
+.laptop-info {
+    padding: 12px 16px 0px 16px;
+    width: 100%;
+    transition: .2s;
+}
+
+.laptop-item:hover .laptop-detail{
+    background-color: #f3f3f3;
+}
+
+.laptop-item:hover .laptop-detail .laptop-info {
+    background-color: #f3f3f3;
+    transform: translateY(-34px);
+}
+
+.laptop-item:hover .btn-add-to-cart {
+    transition: 0s;
+    visibility: visible;
 }

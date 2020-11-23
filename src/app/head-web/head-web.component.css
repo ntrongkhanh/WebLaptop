@@ -52,12 +52,13 @@
 }
 
 .icon-right {
+    display: flex;
     justify-content: flex-end;
     height: 100%;
 }
 
 .icon-right .icon-inheader{
-    margin-left: 32px;
+    margin-left: 16px;
 }
 .icon-right .icon-inheader:last-child{
     margin-right: 16px;
@@ -103,5 +104,14 @@
 
     .icon-right .text-inheader{
         display: none;
+    }
+
+    .icon-right .icon-inheader{
+        margin-right: 0;
+        margin-left: 0;
+    }
+
+    .search-input {
+        max-width: 600px;
     }
 }

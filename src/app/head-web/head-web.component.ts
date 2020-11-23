@@ -18,7 +18,13 @@ export class HeadWebComponent implements OnInit {
 
   searchBoxClass = {
     'col-sm-4' : true,
-    'col-sm-5' : false,
+    'col-sm-8' : false,
+  }
+
+  iconRightClass = {
+    'col-sm-1' : false,
+    'col-sm-4' : true,
+    'icon-right' : true
   }
 
   public innerWidth: any;
@@ -44,7 +50,11 @@ export class HeadWebComponent implements OnInit {
 
       //responsive for search box
       this.searchBoxClass['col-sm-4'] = true;
-      this.searchBoxClass['col-sm-5'] = false;
+      this.searchBoxClass['col-sm-8'] = false;
+
+      //responsive right 
+      this.iconRightClass['col-sm-1'] = false;
+      this.iconRightClass['col-sm-4'] = true;
 
       this.closeSideBar();
       
@@ -57,7 +67,11 @@ export class HeadWebComponent implements OnInit {
 
       //responsive for search box
       this.searchBoxClass['col-sm-4'] = false;
-      this.searchBoxClass['col-sm-5'] = true;
+      this.searchBoxClass['col-sm-8'] = true;
+
+      //responsive right 
+      this.iconRightClass['col-sm-1'] = true;
+      this.iconRightClass['col-sm-4'] = false;
 
       console.log(this.innerWidth);
     }
