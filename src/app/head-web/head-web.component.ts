@@ -13,17 +13,20 @@ export class HeadWebComponent implements OnInit {
   logoClass = {
     'col-sm-2' : false,
     'col-sm-1' : true,
+    'col-3' : true,
     'logo-container': true
   }
 
   searchBoxClass = {
     'col-sm-4' : true,
     'col-sm-8' : false,
+    'col-7' : true
   }
 
   iconRightClass = {
     'col-sm-1' : false,
     'col-sm-4' : true,
+    'col-1' : true,
     'icon-right' : true
   }
 

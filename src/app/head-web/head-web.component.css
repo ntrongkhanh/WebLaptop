@@ -115,3 +115,15 @@
         max-width: 600px;
     }
 }
+
+@media screen and (max-width: 575px) {
+    .icon-right .icon-inheader:last-child{
+        margin-right: 0px;
+    }
+}
+
+@media screen and (max-width: 390px) {
+    #searchBoxDiv {
+        display: none;
+    }
+}

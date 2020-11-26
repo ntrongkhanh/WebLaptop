@@ -11,30 +11,37 @@
 }
 
 .logo {
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-bottom: 16px;
     font-size: 48px;
     color: #0099CC;
+    font-weight: 700;
 }
 
 .link-page {
-    text-align: right;
-    font-size: 32px;
+    font-size: 1.5rem;
 }
 .link-page a {
     margin-right: 20px;
     color: white;
 }
 
+.link-page a:last-child{
+    margin-right: 0;
+}
+
 .content-footer {
     margin-top: 10px;
 }
 
-.title-footer div {
+.title-footer {
     font-size: 24px;
     color: white;
 }
 
 .list-fortmat {
-    margin-left: -40px;
+    margin-left: 0px;
 }
 
 .list-fortmat li{
@@ -44,4 +51,30 @@
 
 .list-fortmat li span {
     color: white;
+}
+
+.social-block, .contact-block, .policy-block, .product-block{
+    vertical-align: top;
+    padding-left: 0;
+    display: inline-block;
+}
+
+.about-block {
+    width: 100%;
+    background-color:#0e0e0e;
+    text-align: center;
+    font-size: 14px;
+    color:#D6D6D6;
+    margin-top: 64px;
+}
+
+@media screen and (max-width: 575px) {
+    .social-block, .contact-block, .policy-block, .product-block{
+        text-align: center;
+    }
+
+    .social-block .link-page{
+        margin-left: auto;
+        margin-right: auto;
+    }
 }

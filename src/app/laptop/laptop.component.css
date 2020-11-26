@@ -12,6 +12,8 @@
 
 .img-wrapper {
     padding: 16px 16px 0 16px;
+    display: flex;
+    justify-content: center;
 }
 
 .laptop-name {
@@ -50,6 +52,11 @@
     margin-bottom: -28px;
     padding: 0px 0px 0px 0px;
     transition: 0s;
+}
+
+.btn-add-to-cart button i{
+    font-size: 1rem;
+    margin-right: 4px;
 }
 
 .btn-add-to-cart button {

@@ -29,3 +29,15 @@
         grid-template-columns: 32.4% 32.4% 32.4%;
     }
 }
+
+@media screen and (max-width: 620px) {
+    .list-laptop {
+        grid-template-columns: 49.5% 49.5%;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .list-laptop {
+        grid-template-columns: 99.5%;
+    }
+}
