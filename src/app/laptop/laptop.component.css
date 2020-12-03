@@ -97,6 +97,7 @@
 .laptop-item:hover .laptop-detail .laptop-info {
     background-color: #f3f3f3;
     transform: translateY(-34px);
+    color: #175E75;
 }
 
 .laptop-item:hover .btn-add-to-cart {

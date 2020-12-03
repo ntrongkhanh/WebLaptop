@@ -23,7 +23,7 @@
     margin-bottom: 8px;
 }
 
-.price-caterogy button{
+.price-caterogy .price-filter {
     border: none;
     border-radius: 20px;
     display: inline;
@@ -33,6 +33,11 @@
     margin-bottom: 8px;
     font-weight: 500;
     font-size: 14px;
+    transition: 0.2s;
+}
+.price-caterogy .price-filter:hover{
+    background-color: #0099CC;
+    color: whitesmoke;
 }
 
 .list-laptop {

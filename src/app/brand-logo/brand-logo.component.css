@@ -1,0 +1,34 @@
+.img-brand-wrapper {
+     margin-top: 16px;
+     text-align: center;
+     vertical-align: middle;
+     background-color: #ffffff;
+     border-radius: 10px;
+}
+
+.img-brand-wrapper a.logo-img{
+     display: inline-block;
+     width: 146px;
+     padding: 12px 0px;
+     background-color: #ffffff;
+     border: 1px solid transparent;
+     border-radius: 10px;
+}
+
+.img-brand-wrapper a.logo-img:hover{
+     background-color: #f3f3f3;
+     border: 1px solid #0099CC;
+}
+
+.img-brand-wrapper .logo-img img{
+     height: 21px;
+}
+
+@media screen and (min-width: 1200px) {
+     .img-brand-wrapper{
+          margin-right: 6px;
+     }
+}
+
+
+
