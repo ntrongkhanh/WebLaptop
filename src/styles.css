@@ -6,6 +6,16 @@
     -webkit-box-sizing:border-box;
 }
 
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #0099CC;
+}
+
 ::-webkit-input-placeholder {
     color: #70DBFF !important;
     opacity: 0.5 !important;

@@ -9,6 +9,7 @@ export class LaptopComponent implements OnInit {
 
   constructor() { }
 
+  link="";
   name ="";
   config="";
   price;

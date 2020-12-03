@@ -29,13 +29,46 @@
                 </form>
             </div>
             <div [ngClass]="iconRightClass">
-                <div class="icon-inheader">
-                    <i class="fas fa-shopping-cart"></i>
-                    <span class="text-inheader">Giỏ hàng</span>
+                <div class="icon-inheader cart-dropdown">
+                    <a href="#">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="text-inheader">Giỏ hàng</span>
+                    </a>
+                    <div class="cart-container">
+                        <div class="cart-title">Có <p style="color: #00BA06; display: inline;">{{productsInCart.length}}</p> sản phẩm trong giỏ hàng</div>
+                        <ul class="list-product">
+                            <li *ngFor="let item of productsInCart">
+                                <img [src]="item.imageSrc" [alt]="item.name">
+                                <div class="item-info-wrapper">
+                                    <div class="cart-item-name">
+                                        {{item.name}}
+                                    </div>
+                                    <div class="cart-item-price">
+                                        {{formatCurrency(item.price)}}
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="cart-total-price">
+                            Tổng cộng: <p class="cart-price">{{formatCurrency(getTotalPrice())}}</p>
+                        </div>
+                        <a href="#" class="payment-link">
+                            <div class="cart-payment">
+                                Tiến hành thanh toán
+                            </div>
+                        </a>
+                    </div>
                 </div>
-                <div class="icon-inheader">
-                    <!-- <i class="fas fa-sign-in-alt"></i> -->
-                    <span class="text-inheader">Trọng Khanh</span>
+                <div class="icon-inheader user-dropdown">
+                        <i class="fas fa-user-circle"></i>
+                        <span class="text-inheader"></span>
+
+                        <div class="user-dropdown-container">
+                            <a href="#" class="login">Đăng nhập</a>
+                            <a href="#" class="signin">
+                                Đăng kí
+                            </a>
+                        </div>
                 </div>
             </div>
         </div>
