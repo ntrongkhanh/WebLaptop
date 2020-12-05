@@ -1,9 +1,12 @@
 .text-not-found {
     height: 100vh;
     line-height: 100vh;
-    background-color: #0000CD;
+    margin-top: -56px;
+    margin-bottom: 0;
+    background-color: #3e3e6b;
     font-size: 50px;
     color: white;
     text-align: center;
     font-family: 'Courier New', Courier, monospace;
+
 }

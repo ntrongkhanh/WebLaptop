@@ -1,101 +1,110 @@
 /* You can add global styles to this file, and also import other style files */
-*{
-    padding: 0px;
-    margin: 0px;
-    box-sizing: border-box;
-    -webkit-box-sizing:border-box;
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
 }
 
 a {
-    text-decoration: none;
-    color: black;
+  text-decoration: none;
+  color: black;
 }
 
 a:hover {
-    text-decoration: none;
-    color: #0099CC;
+  text-decoration: none;
+  color: #0099cc;
+}
+
+.container {
+  max-width: 1250px;
+}
+
+.title {
+  font-size: 28px;
+  color: #0099cc;
+  font-weight: 500;
+  margin-top: 32px;
 }
 
 ::-webkit-input-placeholder {
-    color: #70DBFF !important;
-    opacity: 0.5 !important;
+  color: #70dbff !important;
+  opacity: 0.5 !important;
 }
 :-moz-placeholder {
-    color: #70DBFF !important;
-    opacity: 0.5 !important;
+  color: #70dbff !important;
+  opacity: 0.5 !important;
 }
 ::-moz-placeholder {
-    color: #70DBFF !important;
-    opacity: 0.5 !important;
+  color: #70dbff !important;
+  opacity: 0.5 !important;
 }
-:-ms-input-placeholder {  
-    color: #70DBFF !important;
-    opacity: 0.5 !important;
+:-ms-input-placeholder {
+  color: #70dbff !important;
+  opacity: 0.5 !important;
 }
-::placeholder {  
-    font-style: italic; 
-    color: #70DBFF !important;
-    opacity: 0.5 !important;
+::placeholder {
+  font-style: italic;
+  color: #70dbff !important;
+  opacity: 0.5 !important;
 }
 
 .property-web {
-    background-color: #F4F4F4;
+  background-color: #f4f4f4;
 }
 
 .view-more-btn {
-    display: block;
-    color: #15697F;
-    border: 2px solid #0099CC;
-    border-radius: 20px;
-    width: 190px;
-    margin-top: 1rem;
-    margin-left: auto;
-    margin-right: auto;
+  display: block;
+  color: #15697f;
+  border: 2px solid #0099cc;
+  border-radius: 20px;
+  width: 190px;
+  margin-top: 1rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.view-more-btn:hover{
-    color: white;
-    background-color: #0099CC;
-    border: 2px solid #0099CC;
+.view-more-btn:hover {
+  color: white;
+  background-color: #0099cc;
+  border: 2px solid #0099cc;
 }
 
 .logo-container {
-    display: flex;
-    justify-content: flex-start;
-    color: #0099CC;
-    font-size: 32px;
+  display: flex;
+  justify-content: flex-start;
+  color: #0099cc;
+  font-size: 32px;
 }
 
 .logo {
-    font-weight: 600;
-    
+  font-weight: 600;
 }
 
-.logo p{
-    display: inline-block;
-    margin-bottom: 0px;
+.logo p {
+  display: inline-block;
+  margin-bottom: 0px;
 }
 
 body {
-    padding-top: 56px;
+  padding-top: 56px;
 }
 
 @media screen and (max-width: 1026px) {
+  .open-sidebar-btn {
+    margin-left: 16px;
+    display: inline-block;
+    background-color: transparent;
+    color: #d6d6d6;
+    border: none;
+    outline: none;
+  }
 
-    .open-sidebar-btn {
-        margin-left: 16px;
-        display: inline-block;
-        background-color: transparent;
-        color: #D6D6D6;
-        border: none;
-        outline: none;
-    }
+  .icon-left {
+    display: none;
+  }
 
-    .icon-left {
-        display: none;
-    }
-
-    .logo-container {
-        margin-left: -16px;
-    }
+  .logo-container {
+    margin-left: -16px;
+  }
 }

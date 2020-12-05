@@ -1,5 +1,14 @@
-<div class="category-body-wrapper">
-    <p class="title-laptop">Laptop</p>
+<div class="category-body-wrapper container">
+    <div class="nav-address">
+        <a href="#" class="home">
+            Trang chủ
+        </a>
+        <a href="#" class="laptop brand">
+            Laptop
+        </a>
+    </div>
+    <app-brand-logo></app-brand-logo>
+    <p class="title">Laptop</p>
     <span>Tổng cộng có x sản phẩm</span>
     <span class="text-normal"> Sắp xếp</span>
     <i class="fas fa-angle-down icon-dropdown"></i>
@@ -9,45 +18,46 @@
     <button class="text-delete-fill">Xóa tất cả</button>
 
     <div class="row spacing-top">
-        <div class="col-sm-2 nopadding">
-            <Button class="category-type-btn">Thương hiệu
+        <div class="product-filter  col-sm-2">
+            <button class="category-type-btn">
+                Thương hiệu
                 <i class="fas fa-plus"></i>
-            </Button>
-            <Button class="category-type-btn">Khoảng giá
+            </button>
+            <button class="category-type-btn">Khoảng giá
                 <i class="fas fa-plus"></i>
-            </Button>
-            <Button class="category-type-btn">Nhu cầu
+            </button>
+            <button class="category-type-btn">Nhu cầu
                 <i class="fas fa-plus"></i>
-            </Button>
-            <Button class="category-type-btn">CPU
+            </button>
+            <button class="category-type-btn">CPU
                 <i class="fas fa-plus"></i>
-            </Button>
-            <Button class="category-type-btn">RAM
+            </button>
+            <button class="category-type-btn">RAM
                 <i class="fas fa-plus"></i>
-            </Button>
-            <Button class="category-type-btn">Ổ cứng
+            </button>
+            <button class="category-type-btn">Ổ cứng
                 <i class="fas fa-plus"></i>
-            </Button>
-            <Button class="category-type-btn">Kích thước màn hình
+            </button>
+            <button class="category-type-btn">Kích thước màn hình
                 <i class="fas fa-plus"></i>
-            </Button>
-            <Button class="category-type-btn">Tấm nền màn hình
+            </button>
+            <button class="category-type-btn">Tấm nền màn hình
                 <i class="fas fa-plus"></i>
-            </Button>
-            <Button class="category-type-btn">Tần số quét
+            </button>
+            <button class="category-type-btn">Tần số quét
                 <i class="fas fa-plus"></i>
-            </Button>
-            <Button class="category-type-btn">Độ phân giải
+            </button>
+            <button class="category-type-btn">Độ phân giải
                 <i class="fas fa-plus"></i>
-            </Button>
-            <Button class="category-type-btn">Card đồ họa
+            </button>
+            <button class="category-type-btn">Card đồ họa
                 <i class="fas fa-plus"></i>
-            </Button>
-            <Button class="category-type-btn">Trọng lượng
+            </button>
+            <button class="category-type-btn">Trọng lượng
                 <i class="fas fa-plus"></i>
-            </Button>
+            </button>
         </div>
-        <div class="container list-laptop col-sm-10">
+        <div class="list-laptop col-sm-10">
             <app-laptop></app-laptop>
             <app-laptop></app-laptop>
             <app-laptop></app-laptop>
