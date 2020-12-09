@@ -20,9 +20,6 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { BodyCategoryPageComponent } from './body-category-page/body-category-page.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { SidebarWebComponent } from './sidebar-web/sidebar-web.component';
-import { PageCartComponent } from './page-cart/page-cart.component';
-import { LaptopInCartComponent } from './laptop-in-cart/laptop-in-cart.component';
-import { PageAddressOrderComponent } from './page-address-order/page-address-order.component';
 
 @NgModule({
   declarations: [
@@ -39,10 +36,7 @@ import { PageAddressOrderComponent } from './page-address-order/page-address-ord
     PageNotFoundComponent,
     BodyCategoryPageComponent,
     ProductDetailComponent,
-    SidebarWebComponent,
-    PageCartComponent,
-    LaptopInCartComponent,
-    PageAddressOrderComponent
+    SidebarWebComponent
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   imports: [
