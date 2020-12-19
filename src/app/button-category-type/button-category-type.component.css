@@ -1,0 +1,40 @@
+/*button category*/
+.category-type-btn {
+  position: relative;
+  margin-bottom: 5px;
+  width: 100%;
+  border: 2px solid transparent;
+  outline: none;
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: left;
+}
+.category-type-btn:active{
+  outline: none;
+  border: 2px solid #0099CC;
+}
+
+.category-type-btn i {
+  position: absolute;
+  right: 8px;
+  top: 14px;
+}
+.groupFilter-container {
+  display: none;
+  background-color: #ffffff;
+  margin-bottom: 8px;
+  border-radius: 10px;
+  box-shadow: 0px 2px 5px #c0c0c0;
+}
+
+.label-checkbox {
+  font-size: 0.9rem;
+  font-weight: 500;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 0;
+}
+.filter-checkbox{
+  margin-right: 8px;
+}

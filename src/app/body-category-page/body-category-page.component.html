@@ -10,52 +10,23 @@
     <app-brand-logo></app-brand-logo>
     <p class="title">Laptop</p>
     <span>Tổng cộng có x sản phẩm</span>
-    <span class="text-normal"> Sắp xếp</span>
-    <i class="fas fa-angle-down icon-dropdown"></i>
-    <button class="category-brand-btn" type="button">Dell
-        <i class="fas fa-times"></i>
-    </button>
+    <div class="order-dropdown">
+        <select name="order" id="order" class="order-dropdown-control">
+            <option value="best-sell">Bán chạy</option>
+            <option value="price_increase">Giá thấp</option>
+            <option value="price_decrease">Giá cao</option>
+        </select>
+    </div>
+    
+    <app-button-categogy-brand brand-name="Dell"></app-button-categogy-brand>
+
     <button class="text-delete-fill">Xóa tất cả</button>
 
     <div class="row spacing-top">
         <div class="product-filter  col-sm-2">
-            <button class="category-type-btn">
-                Thương hiệu
-                <i class="fas fa-plus"></i>
-            </button>
-            <button class="category-type-btn">Khoảng giá
-                <i class="fas fa-plus"></i>
-            </button>
-            <button class="category-type-btn">Nhu cầu
-                <i class="fas fa-plus"></i>
-            </button>
-            <button class="category-type-btn">CPU
-                <i class="fas fa-plus"></i>
-            </button>
-            <button class="category-type-btn">RAM
-                <i class="fas fa-plus"></i>
-            </button>
-            <button class="category-type-btn">Ổ cứng
-                <i class="fas fa-plus"></i>
-            </button>
-            <button class="category-type-btn">Kích thước màn hình
-                <i class="fas fa-plus"></i>
-            </button>
-            <button class="category-type-btn">Tấm nền màn hình
-                <i class="fas fa-plus"></i>
-            </button>
-            <button class="category-type-btn">Tần số quét
-                <i class="fas fa-plus"></i>
-            </button>
-            <button class="category-type-btn">Độ phân giải
-                <i class="fas fa-plus"></i>
-            </button>
-            <button class="category-type-btn">Card đồ họa
-                <i class="fas fa-plus"></i>
-            </button>
-            <button class="category-type-btn">Trọng lượng
-                <i class="fas fa-plus"></i>
-            </button>
+            <ng-container *ngFor="let item of ListFilter">
+                <app-button-category-type [filter-object]="item"></app-button-category-type>
+            </ng-container>
         </div>
         <div class="list-laptop col-sm-10">
             <app-laptop></app-laptop>

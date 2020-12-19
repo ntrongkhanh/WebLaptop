@@ -23,6 +23,8 @@ import { SidebarWebComponent } from './sidebar-web/sidebar-web.component';
 import { PageCartComponent } from './page-cart/page-cart.component';
 import { LaptopInCartComponent } from './laptop-in-cart/laptop-in-cart.component';
 import { PageAddressOrderComponent } from './page-address-order/page-address-order.component';
+import { ButtonCategogyBrandComponent } from './button-categogy-brand/button-categogy-brand.component';
+import { ButtonCategoryTypeComponent } from './button-category-type/button-category-type.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,9 @@ import { PageAddressOrderComponent } from './page-address-order/page-address-ord
     SidebarWebComponent,
     PageCartComponent,
     LaptopInCartComponent,
-    PageAddressOrderComponent
+    PageAddressOrderComponent,
+    ButtonCategogyBrandComponent,
+    ButtonCategoryTypeComponent
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   imports: [

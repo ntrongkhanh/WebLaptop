@@ -1,0 +1,16 @@
+.category-brand-btn {
+  position: relative;
+  border: none;
+  outline: none;
+  background-color: #d6d6d6;
+  border-radius: 20px;
+  padding: 4px 16px;
+  margin-left: 20px;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.category-brand-btn i {
+  margin-right: -3px;
+  margin-left: 5px;
+}
