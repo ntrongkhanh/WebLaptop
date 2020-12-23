@@ -1,0 +1,33 @@
+<div class="product-introduce-container">
+     <div class="product__about">
+          <div class="intro__title">
+
+          </div>
+     
+          <div class="intro__description">
+               <markdown [src]="'../../assets/mdtest/product1.md'" (load)="onLoad($event)" (error)="onError($event)"></markdown>
+          </div>
+     
+          <div class="product-order">
+               <button class="product-order__btn">
+                    Đặt hàng ngay
+               </button>
+          </div>
+     </div>
+     <div class="product-relate">
+          <h4>Cấu hình khác</h4>
+
+          <ng-container *ngFor="let item of listRelateProduct">
+               <a href="#">
+                    <div class="product-relate__container">
+                         <div class="product-relate__price">
+                              {{formatCurrency(item.price)}}
+                         </div>
+                         <div class="product-relate__config">
+                              {{item.config}}
+                         </div>
+                    </div>
+               </a>
+          </ng-container>
+     </div>
+</div>

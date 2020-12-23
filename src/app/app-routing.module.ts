@@ -5,6 +5,7 @@ import { PageCartComponent } from './page-cart/page-cart.component';
 import { PageCategoryLapComponent } from './page-category-lap/page-category-lap.component';
 import { PageHomeComponent } from './page-home/page-home.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { PageProductDetailComponent } from './page-product-detail/page-product-detail.component';
 
 const routes: Routes = [
   {path: 'home', component: PageHomeComponent},
@@ -12,6 +13,7 @@ const routes: Routes = [
   {path: 'cart', component: PageCartComponent},
   {path: 'address-orther', component: PageAddressOrderComponent},
   {path: '', redirectTo: 'home', pathMatch: 'full'},
+  {path: 'product-detail', component: PageProductDetailComponent},
   {path: '**', component: PageNotFoundComponent}
 ];
 

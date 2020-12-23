@@ -1,0 +1,151 @@
+<div class="product-info-container">
+     <div class="product-title">
+          <h2>Asus ROG Zephyrus G15</h2>
+          <div class="star">
+               <i class="fas fa-star"></i>
+               <i class="fas fa-star"></i>
+               <i class="fas fa-star"></i>
+               <i class="fas fa-star"></i>
+               <i class="far fa-star"></i>
+          </div>
+          <p class="rate-number"><span style="font-weight: bold;">9</span> lượt đánh giá</p>
+     </div>
+     <div class="product-info-row">
+          <div class="product-img-show">
+               <div class="img-show">
+                    <img [src]="listImage[currentIndex]" alt="">
+               </div>
+               
+               <div class="small-img">
+                    <div class="left-arrow" (click)="decreaseIndex()">
+                         <i class="fas fa-angle-left"></i>
+                    </div>
+     
+                    <div class="img-col" *ngFor="let item of listImage; let indexOfItem = index"
+                         (click)="handleClickImg($event, indexOfItem)" [ngClass]="isActived(indexOfItem)">
+                         <img [src]="item" alt="">
+
+                    </div>
+     
+                    <div class="right-arrow" (click)="increaseIndex()">
+                         <i class="fas fa-angle-right"></i>
+                    </div>
+               </div>
+          </div>
+     
+          <div class="product-info-show">
+               <div class="product-info-wrapper">
+                    <div class="product-info-element">
+                         <div class="product-info__title">
+                              Vi xử lý:
+                         </div>
+                         <p class="product-info__description">
+                              {{product.cpu}}
+                         </p>
+                    </div>
+                    
+                    <div class="product-info-element">
+                         <div class="product-info__title">
+                              RAM:
+                         </div>
+                         <p class="product-info__description">
+                              {{product.ram}}
+                         </p>
+                    </div>
+     
+                    <div class="product-info-element">
+                         <div class="product-info__title">
+                              Màn hình:
+                         </div>
+                         <p class="product-info__description">
+                              {{product.monitor}}
+                         </p>
+                    </div>
+     
+                    <div class="product-info-element">
+                         <div class="product-info__title">
+                              Card đồ họa:
+                         </div>
+                         <p class="product-info__description">
+                              {{product.videoCard}}
+                         </p>
+                    </div>
+     
+                    <div class="product-info-element">
+                         <div class="product-info__title">
+                              Lưu trữ:
+                         </div>
+                         <p class="product-info__description">
+                              {{product.storage}}
+                         </p>
+                    </div>
+     
+                    <div class="product-info-element">
+                         <div class="product-info__title">
+                              Pin:
+                         </div>
+                         <p class="product-info__description">
+                              {{product.pin}}
+                         </p>
+                    </div>
+     
+                    <div class="product-info-element">
+                         <div class="product-info__title">
+                              Kết nối chính:
+                         </div>
+                         <p class="product-info__description">
+                              {{product.connector}}
+                         </p>
+                    </div>
+     
+                    <div class="product-info-element">
+                         <div class="product-info__title">
+                              Cân nặng:
+                         </div>
+                         <p class="product-info__description">
+                              {{product.weight}}
+                         </p>
+                    </div>
+     
+                    <div class="product-info-element">
+                         <div class="product-info__title">
+                              Hệ điều hành:
+                         </div>
+                         <p class="product-info__description">
+                              {{product.os}}
+                         </p>
+                    </div>
+               </div>
+
+               <div class="product-info__price">
+                    {{formatCurrency(product.price)}}
+               </div>
+
+               <div class="product-order">
+                    <button class="product-order__btn">
+                         Đặt hàng ngay
+                    </button>
+               </div>
+          </div>
+     
+          <div class="product-policies-show">
+               <div class="product-info__title">
+                    Chính sách:
+               </div>
+               <ul class="product-policies__description">
+                    <li>
+                         Bảo hành chính hãng 24 tháng.
+                    </li>
+                    <li>
+                         Đổi mới trong 2 tuần đầu.
+                    </li>
+                    <li>
+                         Trả góp lãi suất 0 đồng.
+                    </li>
+                    <li>
+                         Giao hàng tận nơi.
+                    </li>
+               </ul>
+          </div>
+     </div>
+</div>

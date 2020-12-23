@@ -1,0 +1,25 @@
+.nav-address {
+     display: flex;
+     margin-bottom: 16px;
+   }
+   
+   .nav-address .home,
+   .nav-address .laptop {
+     /* display: inline-block; */
+     margin-top: 16px;
+     height: 32px;
+     padding: 2px 12px;
+     border-top-right-radius: 16px;
+     border-bottom-right-radius: 16px;
+     background-color: #d6d6d6;
+   }
+   
+   .nav-address .home {
+     z-index: 1;
+   }
+   .nav-address .brand {
+     margin-left: -16px;
+     padding-left: 26px;
+     background-color: #c5c5c5;
+     z-index: 0;
+}
