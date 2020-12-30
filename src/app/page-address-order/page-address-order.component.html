@@ -37,5 +37,50 @@
             </div>
         </div>      
     </div>
+    <div class="add-address-question">
+        <span>Bạn muốn giao hàng đến địa chỉ khác? </span>
+        <span> Thêm địa chỉ giao hàng mới</span>
+    </div>
+    <div class="add-address-form-wrapper">
+        <div class="add-address-form">
+            <div>
+                <label class="col-sm-5">Họ và tên</label>
+                <input class="col-sm-7" name="hoTen" type="text" placeholder="Nhập họ tên"/>
+            </div>
+            <div>
+                <label class="col-sm-5">Điện thoại di động</label>
+                <input class="col-sm-7" name="sdt" type="text" placeholder="Nhập số điện thoại"/>
+            </div>
+            <div>
+                <label class="col-sm-5">Tỉnh/Thành phố</label>
+                <select class="col-sm-7" name="tinhTP" title="Chọn Tỉnh/Thành phố">
+                    <option value="" disabled selected hidden>Chọn Tỉnh/Thành phố</option>
+                </select>
+            </div>
+            <div>
+                <label class="col-sm-5">Quận/Huyện</label>
+                <select class="col-sm-7" name="quanHuyen" title="Quận/Huyện">
+                    <option value="" disabled selected hidden>Quận/Huyện</option>
+                </select>
+            </div>
+            <div>
+                <label class="col-sm-5">Phường/Xã</label>
+                <select class="col-sm-7" name="phuongXa" title="Phường/Xã">
+                    <option value="" disabled selected hidden>Chọn Phường/Xã</option>
+                </select>
+            </div>
+            <div>
+                <label class="col-sm-5">Tòa nhà/Tên đường</label>
+                <input class="col-sm-7" name="tenDuong" type="text" placeholder="Nhập địa chỉ cụ thể; VD: 23/11 Nguyễn Văn Mại"/>
+            </div>
+            <div class="comfirm-add-address-wrapper">
+                <button class="btn-cancel-add">Hủy</button>
+                <button class="btn-confirm-add">Giao đến đây</button>
+            </div>
+        </div>
+    </div>
+    <div class="next-step-btn-wrapper">
+        <button class="btn-next-step">Bước tiếp theo</button>
+    </div> 
 </div>
 <app-footer-web></app-footer-web>

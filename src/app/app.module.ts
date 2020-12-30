@@ -36,6 +36,7 @@ import { ProductReviewComponent } from './product-review/product-review.componen
 import { BrandPipe } from './pipes/brand.pipe';
 import { OrderPipe } from './pipes/order.pipe';
 import { FilterPipe } from './pipes/filter.pipe';
+import { PageInfoAndPaymentMethodComponent } from './page-info-and-payment-method/page-info-and-payment-method.component';
 
 @NgModule({
   declarations: [
@@ -65,7 +66,7 @@ import { FilterPipe } from './pipes/filter.pipe';
     BrandPipe,
     OrderPipe,
     FilterPipe,
-
+    PageInfoAndPaymentMethodComponent
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   imports: [
@@ -85,5 +86,4 @@ import { FilterPipe } from './pipes/filter.pipe';
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { 
-}
+export class AppModule { }

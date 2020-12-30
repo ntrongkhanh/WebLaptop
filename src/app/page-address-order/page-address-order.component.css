@@ -97,3 +97,60 @@
     color: white;
     text-align: center;
 }
+.add-address-question {
+    margin-top: 0.5rem;
+    margin-left: 2rem;
+    margin-bottom: 0.5rem;
+}
+/* add form */
+::placeholder {
+    color: #707070 !important;
+    font-style: normal;
+}
+
+.add-address-form-wrapper {
+    background-color: white;
+    height: auto;
+    border-radius: 10px;
+}
+
+.next-step-btn-wrapper {
+    text-align: right;
+    margin-right: 2rem;
+}
+.btn-next-step {
+    background-color: #0099CC;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px 5px 10px;
+}
+.add-address-form {
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+.add-address-form div {
+    margin-top: 0.5rem;
+}
+
+.comfirm-add-address-wrapper {
+    text-align: right;
+}
+.comfirm-add-address-wrapper button { 
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px 5px 10px;
+}
+.btn-cancel-add {
+    background-color: #707070;
+    margin-right: 5px;
+}
+.btn-confirm-add {
+    background-color: #0099CC;
+}

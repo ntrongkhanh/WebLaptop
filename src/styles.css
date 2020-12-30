@@ -89,18 +89,6 @@ a:hover {
 body {
   padding-top: 56px;
 }
-/*Mardown css in product-introduce.component*/ 
-.intro__description {
-  display: flex;
-}
-
-.intro__description p img{
-  display: block;
-  max-width: 100%;
-  margin-left: 50%;
-  transform: translateX(-50%);
-}
-
 
 @media screen and (max-width: 1026px) {
   .open-sidebar-btn {
