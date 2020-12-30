@@ -11,7 +11,7 @@ const routes: Routes = [
   {path: 'home', component: PageHomeComponent},
   {path: 'category-lap', component: PageCategoryLapComponent},
   {path: 'cart', component: PageCartComponent},
-  {path: 'address-orther', component: PageAddressOrderComponent},
+  {path: 'address-order', component: PageAddressOrderComponent},
   {path: '', redirectTo: 'home', pathMatch: 'full'},
   {path: 'product-detail', component: PageProductDetailComponent},
   {path: '**', component: PageNotFoundComponent}

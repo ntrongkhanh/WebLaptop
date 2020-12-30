@@ -11,8 +11,8 @@
     <p class="title">Laptop</p>
     <span>Tổng cộng có x sản phẩm</span>
     <div class="order-dropdown">
-        <select name="order" id="order" class="order-dropdown-control">
-            <option value="best-sell">Bán chạy</option>
+        <select name="order" id="order" class="order-dropdown-control" [ngModel]="order" (ngModelChange)="onValueSelectChange($event)">
+            <option value="best_sell">Bán chạy</option>
             <option value="price_increase">Giá thấp</option>
             <option value="price_decrease">Giá cao</option>
         </select>
@@ -25,22 +25,30 @@
     <div class="row spacing-top">
         <div class="product-filter  col-sm-2">
             <ng-container *ngFor="let item of ListFilter">
-                <app-button-category-type [filter-object]="item"></app-button-category-type>
+                <app-button-category-type [filter-object]="item" (checkedBox)="onFilterChecked($event)"></app-button-category-type>
             </ng-container>
         </div>
-        <div class="list-laptop col-sm-10">
-            <app-laptop></app-laptop>
-            <app-laptop></app-laptop>
-            <app-laptop></app-laptop>
-            <app-laptop></app-laptop>
-            <app-laptop></app-laptop>
-            <app-laptop></app-laptop>
-            <app-laptop></app-laptop>
-            <app-laptop></app-laptop>
-            <app-laptop></app-laptop>
-            <app-laptop></app-laptop>
-            <app-laptop></app-laptop>
+        <div class="col-sm-10 no-padding">
+            <div *ngIf="laptopRenderList; else loading">
+                <div *ngIf="laptopRenderList.length > 0; else notfound"  class="list-laptop">
+                    <ng-container *ngFor="let item of laptopRenderList">
+                        <app-laptop [laptopObject]="item"></app-laptop>
+                    </ng-container>
+                </div>
+                <ng-template #notfound>
+                    <div class="not-found">
+                        <img src="../../assets/imgs/no-result.png" alt="">
+                        <div>Không tìm thấy sản phẩm</div>
+                    </div>
+                </ng-template>
+            </div>
+            <ng-template #loading>
+                <div class="loading-img">
+                    <img src="../../assets/imgs/loading.svg" alt="">
+                </div>
+            </ng-template>
         </div>       
+        
     </div>
     <div class="text-center spacing-top">
         <div class="pagination">

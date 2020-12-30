@@ -1,5 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { fileURLToPath } from 'url';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-button-category-type',
@@ -16,6 +15,8 @@ export class ButtonCategoryTypeComponent implements OnInit {
     title: '',
     detailFilter: [],
   };
+
+  @Output() checkedBox = new EventEmitter();
 
   async onClickFilter() {
     let filterInstance = await document.getElementById(
@@ -34,5 +35,18 @@ export class ButtonCategoryTypeComponent implements OnInit {
       icon.classList.remove('fa-minus');
       icon.classList.add('fa-plus');
     }
+  }
+
+  getTheText(e, title) {
+    let checkbox = e.target;
+
+    let obj = {
+      isChecked: e.target.checked,
+      value: e.target.value,
+      title: title
+    }
+    
+      this.checkedBox.emit(obj);
+      console.log(checkbox.value);
   }
 }

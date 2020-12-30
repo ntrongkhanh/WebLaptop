@@ -11,16 +11,11 @@
         <button class="price-filter">Trên 40 triệu</button>
     </div>  
     <div class="list-laptop">
-        <app-laptop></app-laptop>
-        <app-laptop></app-laptop>
-        <app-laptop></app-laptop>
-        <app-laptop></app-laptop>
-        <app-laptop></app-laptop>
-        <app-laptop></app-laptop>
-        <app-laptop></app-laptop>
-        <app-laptop></app-laptop>
-        <app-laptop></app-laptop>
-        <app-laptop></app-laptop>
+        <ng-container *ngFor="let item of laptops">
+            <app-laptop [laptopObject]="item"></app-laptop>
+        </ng-container>
     </div>
-    <button type="button" class="btn btn-outline-primary view-more-btn">Xem tất cả</button>
+    <a>
+        <button type="button" class="btn btn-outline-primary view-more-btn">Xem tất cả</button>
+    </a>
 </div>

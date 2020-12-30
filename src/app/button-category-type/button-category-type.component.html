@@ -1,13 +1,23 @@
 <button class="category-type-btn" (click)="onClickFilter()">
-     {{filter.title}}
-     <i [id]="filter.title + 'isExtend'" class="fas fa-plus"></i>
+  {{ filter.title }}
+  <i [id]="filter.title + 'isExtend'" class="fas fa-plus"></i>
 </button>
 
-     <div class="groupFilter-container" [id]="filter.title + 'groupCollapse'" style="display: none;">
-        <ng-container *ngFor="let item of filter.detailFilter">
-            <label class="label-checkbox" [for]="'id' + item">
-                <input class="filter-checkbox" type="checkbox" [value]="item" [id]="'id' + item"/>
-                {{item}}
-            </label>
-         </ng-container>
-     </div>
+<div
+  class="groupFilter-container"
+  [id]="filter.title + 'groupCollapse'"
+  style="display: none">
+  
+  <ng-container *ngFor="let item of filter.detailFilter">
+    <label class="label-checkbox" [for]="'id' + item">
+      <input
+        class="filter-checkbox"
+        type="checkbox"
+        [value]="item"
+        [id]="'id' + item"
+        (click)="getTheText($event, this.filter.title)"
+      />
+      {{ item }}
+    </label>
+  </ng-container>
+</div>

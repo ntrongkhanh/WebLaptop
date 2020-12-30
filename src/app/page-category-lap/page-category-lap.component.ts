@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-page-category-lap',
   templateUrl: './page-category-lap.component.html',

@@ -5,6 +5,7 @@ import localeVi from '@angular/common/locales/vi';
 import { MarkdownModule } from 'ngx-markdown';
 import { SecurityContext } from '@angular/core';
 import { HttpClientModule, HttpClient } from '@angular/common/http'
+import { FormsModule } from '@angular/forms';
 
 registerLocaleData(localeVi);
 
@@ -32,6 +33,9 @@ import { PageProductDetailComponent } from './page-product-detail/page-product-d
 import { ProductInfoComponent } from './product-info/product-info.component';
 import { ProductIntroduceComponent } from './product-introduce/product-introduce.component';
 import { ProductReviewComponent } from './product-review/product-review.component';
+import { BrandPipe } from './pipes/brand.pipe';
+import { OrderPipe } from './pipes/order.pipe';
+import { FilterPipe } from './pipes/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -58,6 +62,9 @@ import { ProductReviewComponent } from './product-review/product-review.componen
     ProductInfoComponent,
     ProductIntroduceComponent,
     ProductReviewComponent,
+    BrandPipe,
+    OrderPipe,
+    FilterPipe,
 
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
@@ -69,9 +76,12 @@ import { ProductReviewComponent } from './product-review/product-review.componen
       sanitize: SecurityContext.NONE,
       loader: HttpClient
     }),
+    FormsModule
   ],
   providers: [
-    {provide: LOCALE_ID, useValue: 'vi-VI'}
+    {provide: LOCALE_ID, useValue: 'vi-VI'},
+    BrandPipe,
+    FilterPipe
   ],
   bootstrap: [AppComponent]
 })

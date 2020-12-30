@@ -1,0 +1,10 @@
+{
+     "/api": {
+       "target": "https://wavi-backend.herokuapp.com",
+       "secure": false,
+       "pathRewrite": {
+        "^/api": ""
+      },
+      "changeOrigin": true
+     }
+   }
