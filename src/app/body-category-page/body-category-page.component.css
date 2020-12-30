@@ -32,6 +32,10 @@
 }
 
 
+.text-normal {
+ 
+}
+
 .icon-dropdown {
   font-size: 24px;
   vertical-align: middle;
@@ -104,7 +108,7 @@
 .nav-address .home,
 .nav-address .laptop {
   /* display: inline-block; */
-  margin-top: 16px;
+  margin-top: 32px;
   height: 32px;
   padding: 2px 12px;
   border-top-right-radius: 16px;

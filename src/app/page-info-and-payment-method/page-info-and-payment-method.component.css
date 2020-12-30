@@ -1,0 +1,132 @@
+.container{
+    max-width: 1250px;
+}
+
+.header-order-page {
+    height: 108px;
+    background-color: white;
+}
+
+.header-order-wrapper {
+    height: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+.header-order-wrapper::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    border-bottom: 3px solid #0099CC;
+}
+
+.logo {
+    font-size: 48px;
+    color: #0099CC;
+    font-weight: 700;
+}
+
+.title-process-order {
+    font-size: 28px;
+    color: #0099CC;
+}
+/****************BODY*/
+
+.payment-body-wrapper {
+    margin-top: 60px;
+}
+
+.payment-method-wrapper {
+    background-color: white;
+    border-radius: 10px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.title-payment-method {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.radio-payment-wrapper {
+    margin-left: 2rem;
+}
+.radio-payment-wrapper input {
+    margin-right: 5px;
+}
+
+.info-order-wrapper {
+    background-color: white;
+    border-radius: 10px;
+    padding: 1rem;
+}
+
+.title-info-wrapper {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.address-info-wrapper {
+    margin-left: 0.5rem;
+}
+
+.title-label {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.name-and-address {
+
+}
+.name-and-address label {
+    margin-bottom: 0;
+}
+
+.change-btn-wrapper {
+    position: relative;
+}
+
+.change-btn {
+    position: absolute;
+    top: 40%;
+    left: 40%;
+    border: none;
+    background-color: transparent;
+}
+
+.product-info-wrapper {
+    margin-left: 0.5rem;
+}
+
+.list-product {
+    margin-left: 0.5rem;
+}
+
+.confirm-order-btn-wrapper {
+    margin-top: 2rem;
+    margin-right: 2rem;
+    text-align: right;
+}
+.confirm-order-btn {
+    background-color: #FF5858;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem 2.5rem 0.5rem 2.5rem;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.order-note {
+    width: 100%;
+    font-style: italic;
+    color: #FF5858;
+    text-align: right;
+}
+
+.notting-order-wrapper {
+    margin-right: 2rem;
+    text-align: right;
+}

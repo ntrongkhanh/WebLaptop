@@ -2,9 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, LOCALE_ID, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { registerLocaleData } from '@angular/common';
 import localeVi from '@angular/common/locales/vi';
-import { MarkdownModule } from 'ngx-markdown';
-import { SecurityContext } from '@angular/core';
-import { HttpClientModule, HttpClient } from '@angular/common/http'
 
 registerLocaleData(localeVi);
 
@@ -28,10 +25,7 @@ import { LaptopInCartComponent } from './laptop-in-cart/laptop-in-cart.component
 import { PageAddressOrderComponent } from './page-address-order/page-address-order.component';
 import { ButtonCategogyBrandComponent } from './button-categogy-brand/button-categogy-brand.component';
 import { ButtonCategoryTypeComponent } from './button-category-type/button-category-type.component';
-import { PageProductDetailComponent } from './page-product-detail/page-product-detail.component';
-import { ProductInfoComponent } from './product-info/product-info.component';
-import { ProductIntroduceComponent } from './product-introduce/product-introduce.component';
-import { ProductReviewComponent } from './product-review/product-review.component';
+import { PageInfoAndPaymentMethodComponent } from './page-info-and-payment-method/page-info-and-payment-method.component';
 
 @NgModule({
   declarations: [
@@ -54,26 +48,16 @@ import { ProductReviewComponent } from './product-review/product-review.componen
     PageAddressOrderComponent,
     ButtonCategogyBrandComponent,
     ButtonCategoryTypeComponent,
-    PageProductDetailComponent,
-    ProductInfoComponent,
-    ProductIntroduceComponent,
-    ProductReviewComponent,
-
+    PageInfoAndPaymentMethodComponent
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule,
-    MarkdownModule.forRoot({
-      sanitize: SecurityContext.NONE,
-      loader: HttpClient
-    }),
   ],
   providers: [
     {provide: LOCALE_ID, useValue: 'vi-VI'}
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { 
-}
+export class AppModule { }
