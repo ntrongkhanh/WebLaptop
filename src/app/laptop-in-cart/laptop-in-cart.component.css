@@ -1,5 +1,4 @@
 .laptop-image {
-    border: 1px dashed black;
     margin-top: 1rem;
 }
 
@@ -26,4 +25,5 @@
 
 .price {
     font-size: 18px;
+    font-weight: 500;
 }

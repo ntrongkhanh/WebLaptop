@@ -22,7 +22,6 @@ import { PageCategoryLapComponent } from './page-category-lap/page-category-lap.
 import { PageHomeComponent } from './page-home/page-home.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { BodyCategoryPageComponent } from './body-category-page/body-category-page.component';
-import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { SidebarWebComponent } from './sidebar-web/sidebar-web.component';
 import { PageCartComponent } from './page-cart/page-cart.component';
 import { LaptopInCartComponent } from './laptop-in-cart/laptop-in-cart.component';
@@ -37,6 +36,7 @@ import { BrandPipe } from './pipes/brand.pipe';
 import { OrderPipe } from './pipes/order.pipe';
 import { FilterPipe } from './pipes/filter.pipe';
 import { PageInfoAndPaymentMethodComponent } from './page-info-and-payment-method/page-info-and-payment-method.component';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -52,7 +52,6 @@ import { PageInfoAndPaymentMethodComponent } from './page-info-and-payment-metho
     PageHomeComponent,
     PageNotFoundComponent,
     BodyCategoryPageComponent,
-    ProductDetailComponent,
     SidebarWebComponent,
     PageCartComponent,
     LaptopInCartComponent,
@@ -66,7 +65,7 @@ import { PageInfoAndPaymentMethodComponent } from './page-info-and-payment-metho
     BrandPipe,
     OrderPipe,
     FilterPipe,
-    PageInfoAndPaymentMethodComponent
+    PageInfoAndPaymentMethodComponent,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   imports: [
@@ -77,7 +76,8 @@ import { PageInfoAndPaymentMethodComponent } from './page-info-and-payment-metho
       sanitize: SecurityContext.NONE,
       loader: HttpClient
     }),
-    FormsModule
+    FormsModule,
+    SharedModule,
   ],
   providers: [
     {provide: LOCALE_ID, useValue: 'vi-VI'},

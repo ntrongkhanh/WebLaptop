@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { LaptopModel } from '../models/laptop.model';
+import { LaptopService } from '../services/laptop/laptop.service';
 
 
 @Component({
@@ -7,10 +9,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./page-category-lap.component.css']
 })
 export class PageCategoryLapComponent implements OnInit {
-
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  buttonClick() {
+    
+  }
 }

@@ -33,6 +33,9 @@ img.carousel-item {
     height: 100%;
 }
 
+.carousel-indicators {
+    z-index: 1;
+}
 .carousel-indicators li{
     background-color: #0099cc;
 }

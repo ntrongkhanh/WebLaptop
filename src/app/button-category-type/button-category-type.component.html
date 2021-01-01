@@ -9,12 +9,12 @@
   style="display: none">
   
   <ng-container *ngFor="let item of filter.detailFilter">
-    <label class="label-checkbox" [for]="'id' + item">
+    <label class="label-checkbox" [for]="'id' + item.toLowerCase()">
       <input
         class="filter-checkbox"
         type="checkbox"
         [value]="item"
-        [id]="'id' + item"
+        [id]="'id' + item.toLowerCase()"
         (click)="getTheText($event, this.filter.title)"
       />
       {{ item }}

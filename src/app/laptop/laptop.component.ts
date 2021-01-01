@@ -1,5 +1,6 @@
 import { stringify } from '@angular/compiler/src/util';
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output } from '@angular/core';
+import { EventEmitter } from '@angular/core';
 import { LaptopModel } from '../models/laptop.model';
 
 @Component({
@@ -17,10 +18,31 @@ export class LaptopComponent implements OnInit {
   name ="";
   config="";
   price;
+
+  clientCarts: LaptopModel[] = [];
   
   ngOnInit(): void {
   }
 
+  buttonCartOnClick() {
+    //lưu xuống localStorage của trình duyệt
+    let localCarts = localStorage.getItem('carts');
+
+    if (!localCarts) {
+      this.clientCarts.push(this.laptopObject);
+      localStorage.setItem('carts', JSON.stringify(this.clientCarts));
+    }
+    else {
+      let retrievedObj: LaptopModel[] = JSON.parse(localCarts);
+
+      retrievedObj.push(this.laptopObject);
+      localStorage.setItem('carts', JSON.stringify(retrievedObj));
+    }
+
+    window.dispatchEvent(new Event('storage'));
+  }
+
+  //get Datas
   getConfig() {
     return this.getCpu() + ", " + this.getRam();
   }

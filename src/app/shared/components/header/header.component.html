@@ -1,0 +1,88 @@
+<ng-container>
+     <div class="navbar navbar-dark fixed-top">
+         <div class="container">
+             <button class="open-sidebar-btn" (click)="openSideBar()">
+                 <span>&#9776;</span>
+             </button>
+             <div id="logoContainer" [ngClass]="logoClass">
+                 <div class="logo">
+                     <a routerLink="home">
+                         <p style="color: #0099CC;">WA<span style="color: aliceblue">VI</span></p>
+                     </a>
+                 </div>
+             </div>
+             <div class="row col-sm-3 icon-left">
+                 <a routerLink="category-lap" routerLinkActive="active">
+                    <div class="icon-inheader">
+                        <i class="fas fa-laptop"></i>
+                        <span class="text-inheader">Laptop</span>
+                    </div>
+                 </a>
+                 <div class="icon-inheader">
+                     <i class="fas fa-headphones"></i>
+                     <span class="text-inheader">Phụ kiện</span>
+                 </div>
+             </div>
+             <div [ngClass]="searchBoxClass" id="searchBoxDiv">
+                 <form>
+                     <input type="search" class="form-control search-input" placeholder="Tìm kiếm" aria-label="Search"
+                         name="searchBox" />
+                     <i class="fas fa-search icon-search"></i>
+                 </form>
+             </div>
+             <div [ngClass]="iconRightClass">
+                 <div class="icon-inheader cart-dropdown">
+                     <a href="cart">
+                         <i class="fas fa-shopping-cart"></i>
+                         <span class="text-inheader">Giỏ hàng</span>
+                     </a>
+                     <div class="cart-container">
+                         <div *ngIf="productsInCart.length > 0; else empty">
+                            <div class="cart-title">Có <p style="color: #00BA06; display: inline;">{{productsInCart.length}}</p> sản phẩm trong giỏ hàng</div>
+                            <ul class="list-product">
+                                <li *ngFor="let item of productsInCart">
+                                    <img [src]="item.image" [alt]="item.name">
+                                    <div class="item-info-wrapper">
+                                        <div class="cart-item-name">
+                                            {{item.name}}
+                                        </div>
+                                        <div class="cart-item-price">
+                                            {{formatCurrency(item.price)}}
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="cart-total-price">
+                                Tổng cộng: <p class="cart-price">{{formatCurrency(getTotalPrice())}}</p>
+                            </div>
+                         </div>
+                         <ng-template #empty>
+                            <div class="empty-cart">
+                                <img src="../../../../assets/imgs/no-result.png" alt="">
+                                <p>Giỏ hàng trống!</p>
+                            </div>
+                         </ng-template>
+                         <a href="address-order" class="payment-link">
+                             <button class="cart-payment">
+                                 Tiến hành thanh toán
+                             </button>
+                         </a>
+                     </div>
+                 </div>
+                 <div class="icon-inheader user-dropdown">
+                         <i class="fas fa-user-circle"></i>
+                         <span class="text-inheader"></span>
+ 
+                         <div class="user-dropdown-container">
+                             <a href="#" class="login">Đăng nhập</a>
+                             <a href="#" class="signin">
+                                 Đăng kí
+                             </a>
+                         </div>
+                 </div>
+             </div>
+         </div>
+     </div>
+ 
+     <app-sidebar [isVisible]="isSideBarOpen" (closeSideBar)="closeSideBar()"></app-sidebar>
+ </ng-container>

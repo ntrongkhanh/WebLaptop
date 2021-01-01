@@ -1,21 +1,22 @@
-<app-head-web></app-head-web>
+
 <div class="row container">
     <div class="col-sm-9 list-lap-cart">
         <span class="title-cart">Giỏ hàng</span>
-        <span>(x sản phẩm)</span>
-        <app-laptop-in-cart></app-laptop-in-cart>
-        <app-laptop-in-cart></app-laptop-in-cart>
-        <app-laptop-in-cart></app-laptop-in-cart>
+        <span>{{ products.length }} sản phẩm</span>
+        <ng-container *ngFor="let item of products">
+            <app-laptop-in-cart [laptopObject]="item"></app-laptop-in-cart>
+        </ng-container>
     </div>
-    <div class="col-sm-3">
-        <div class="result-cart row-sm-2">
-            <label class="col-sm-6">Thành tiền:</label>
-            <label class="total-price col-sm-6">90.000.000đ</label>
+    <div class="col-sm-3 total">
+        <div class="result-cart">
+            <div class="payment-price">
+                <label>Thành tiền:</label>
+                <label class="total-price">{{ formatCurrency(getTotalPrice()) }}</label>
+            </div>
             <div class="vat-info-wrapper">
                 <label class="vat-info">Giá đã bao gồm VAT nếu có</label>
             </div>        
         </div>
-        <button class="btn-processing-order">Tiến hành đặt hàng</button>
+        <a routerLink="/address-order"><button class="btn-processing-order">Tiến hành đặt hàng</button></a>
     </div>
 </div>
-<app-footer-web></app-footer-web>

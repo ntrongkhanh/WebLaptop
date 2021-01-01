@@ -17,4 +17,8 @@ export class LaptopService {
   getLaptops():Observable<LaptopModel[]>{
     return this.http.get<LaptopModel[]>(this.listLaptopUrl);
   }
+
+  getLaptopById(id):Observable<LaptopModel>{
+    return this.http.get<LaptopModel>(this.listLaptopUrl + id);
+  }
 }

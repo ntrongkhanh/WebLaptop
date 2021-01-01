@@ -48,10 +48,11 @@
     position: relative;
     width: 100%;
     visibility: hidden;
-    transform: translateY(-20px);
-    margin-bottom: -28px;
+    /* transform: translateY(-20px);
+    margin-bottom: -28px; */
     padding: 0px 0px 0px 0px;
     transition: 0s;
+    z-index: 2;
 }
 
 .btn-add-to-cart button i{
@@ -76,12 +77,13 @@
 }
 
 .laptop-detail {
-    z-index: 3;
+    z-index: 1;
     background-color: none;
     padding: 8px 0px 8px 0px;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     transition: .2s;
+    margin-bottom: -32px;
 }
 
 .laptop-info {
@@ -92,6 +94,8 @@
 
 .laptop-item:hover .laptop-detail{
     background-color: #f3f3f3;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
 }
 
 .laptop-item:hover .laptop-detail .laptop-info {

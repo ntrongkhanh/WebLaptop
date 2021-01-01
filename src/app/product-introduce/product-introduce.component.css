@@ -16,14 +16,10 @@
      justify-self: stretch;
 }
 
-.intro__description {
-     display: flex;
-}
-
-.intro__description img{
-     justify-self: center;
-     margin-left: auto;
-     margin-right: auto;
+markdown ::ng-deep img {
+     width: 100%;
+     margin-left: 50%;
+     transform: translate(-50%);
 }
 
 .product-relate__container {

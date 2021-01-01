@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 
 import { LaptopModel } from '../../app/models/laptop.model';
 import { LaptopService } from '../../app/services/laptop/laptop.service'
 import { NgForm } from '@angular/forms';
 import { BrandPipe } from '../pipes/brand.pipe';
 import { FilterPipe } from '../pipes/filter.pipe';
+import { EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-body-category-page',
@@ -43,7 +44,7 @@ export class BodyCategoryPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.filterPipe = new FilterPipe();
-      this.getLaptops();
+    this.getLaptops();
   }
 
   async getLaptops() {
@@ -51,8 +52,16 @@ export class BodyCategoryPageComponent implements OnInit {
       this.laptops = result["data"];
 
       this.laptopRenderList = this.laptops;
-      console.log(this.laptopRenderList);
-      console.log(this.laptopRenderList.length);
+
+      let searchParams = new URLSearchParams(window.location.search);
+      if (searchParams.has('brand')) {
+        this.filterObj.brand = searchParams.get('brand');
+
+        let cb = document.getElementById("id" + searchParams.get('brand')) as HTMLInputElement;
+        cb.checked = true;
+        
+        this.laptopRenderList = this.filterPipe.transform(this.laptops, this.filterObj);
+      }
     });
   }
 
