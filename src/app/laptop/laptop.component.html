@@ -1,5 +1,5 @@
 <div class="laptop-item">
-    <a routerLink="/product-detail">
+    <a [routerLink]="['/product-detail', laptopObject.id]">
         <div class="img-wrapper">
             <img class="img-fluid" [src]="getImageLink()" alt="Laptop" />
           </div>

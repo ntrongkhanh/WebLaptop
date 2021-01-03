@@ -3,12 +3,12 @@
     <h1 class="title">Laptop</h1>
     <div class="price-caterogy">
         <p class="title-price">Tầm giá</p>
-        <button class="price-filter">Dưới 10 triệu</button>
-        <button class="price-filter">Từ 10 - 15 triệu</button>
-        <button class="price-filter">Từ 15 - 20 triệu</button>
-        <button class="price-filter">Từ 20 - 30 triệu</button>
-        <button class="price-filter">Từ 30 - 40 triệu</button>
-        <button class="price-filter">Trên 40 triệu</button>
+        <a href="category-lap?price=_10"><button class="price-filter">Dưới 10 triệu</button></a>
+        <a href="category-lap?price=10_15"><button class="price-filter">Từ 10 - 15 triệu</button></a>
+        <a href="category-lap?price=15_20"><button class="price-filter">Từ 15 - 20 triệu</button></a>
+        <a href="category-lap?price=20_30"><button class="price-filter">Từ 20 - 30 triệu</button></a>
+        <a href="category-lap?price=30_40"><button class="price-filter">Từ 30 - 40 triệu</button></a>
+        <a href="category-lap?price=40_"><button class="price-filter">Trên 40 triệu</button></a>
     </div>  
     <div class="list-laptop">
         <ng-container *ngFor="let item of laptops">

@@ -14,6 +14,7 @@ import { EventEmitter } from '@angular/core';
 })
 export class BodyCategoryPageComponent implements OnInit {
 
+  limitList = 12;
   laptopRenderList: LaptopModel[];
   laptops: LaptopModel[];
   countLaptops;
@@ -47,18 +48,94 @@ export class BodyCategoryPageComponent implements OnInit {
     this.getLaptops();
   }
 
+  getLength() {
+    if (this.laptopRenderList)  {
+      return this.laptopRenderList.length;
+    }
+    else {
+      return 0;
+    }
+  }
+
+  showMoreClick() {
+    this.limitList += 12;
+  }
+
+  deleteFilter() {
+    this.filterObj.order = '';
+    this.filterObj.brand = '';
+    this.filterObj.category = '';
+    this.filterObj.cpu = '';
+    this.filterObj.price = '';
+    this.filterObj.ram = '';
+    this.filterObj.storage = '';
+    this.filterObj.display_size = '';
+    this.filterObj.display_resolution = '';
+    this.filterObj.display_freg = '';
+    this.filterObj.display_panel = '';
+    this.filterObj.graphicCard = '';
+    this.filterObj.weight = '';
+
+    let filters = document.getElementsByName("checkbox");
+
+    console.log(filters);
+    filters.forEach(item => {
+      (item as HTMLInputElement).checked = false;
+    });
+
+    this.laptopRenderList = this.filterPipe.transform(this.laptops, this.filterObj);
+  }
+
   async getLaptops() {
     await this.latopService.getLaptops().subscribe(result => {
       this.laptops = result["data"];
 
       this.laptopRenderList = this.laptops;
 
+      //Lấy param từ url
       let searchParams = new URLSearchParams(window.location.search);
       if (searchParams.has('brand')) {
         this.filterObj.brand = searchParams.get('brand');
 
         let cb = document.getElementById("id" + searchParams.get('brand')) as HTMLInputElement;
         cb.checked = true;
+        
+        this.laptopRenderList = this.filterPipe.transform(this.laptops, this.filterObj);
+      }
+
+      if (searchParams.has('price')) {
+        let filterPrice = searchParams.get('price');
+
+        if (filterPrice == "_10"){
+          let cb = document.getElementById("iddưới 10 triệu") as HTMLInputElement;
+          cb.checked = true;
+          this.filterObj.price += "dưới 10 triệu";
+        }
+        else if (filterPrice == "10_15"){
+          let cb = document.getElementById("idtừ 10 - 15 triệu") as HTMLInputElement;
+          cb.checked = true;
+          this.filterObj.price += "từ 10 - 15 triệu";
+        }
+        else if (filterPrice == "15_20"){
+          let cb = document.getElementById("idtừ 15 - 20 triệu") as HTMLInputElement;
+          cb.checked = true;
+          this.filterObj.price += "từ 15 - 20 triệu";
+        }
+        else if (filterPrice == "20_30"){
+          let cb = document.getElementById("idtừ 20 - 30 triệu") as HTMLInputElement;
+          cb.checked = true;
+          this.filterObj.price += "từ 20 - 30 triệu";
+        }
+        else if (filterPrice == "30_40"){
+          let cb = document.getElementById("idtừ 30 - 40 triệu") as HTMLInputElement;
+          cb.checked = true;
+          this.filterObj.price += "từ 30 - 40 triệu";
+        }
+        else if (filterPrice == "40_"){
+          let cb = document.getElementById("idtrên 40 triệu") as HTMLInputElement;
+          cb.checked = true;
+          this.filterObj.price += "trên 40 triệu";
+        }
         
         this.laptopRenderList = this.filterPipe.transform(this.laptops, this.filterObj);
       }

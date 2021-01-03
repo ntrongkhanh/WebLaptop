@@ -1,15 +1,15 @@
 <div class="category-body-wrapper container">
     <div class="nav-address">
-        <a href="#" class="home">
+        <a href="home" class="home">
             Trang chủ
         </a>
-        <a href="#" class="laptop brand">
+        <a href="category-lap" class="laptop brand">
             Laptop
         </a>
     </div>
     <app-brand-logo></app-brand-logo>
     <p class="title">Laptop</p>
-    <span>Tổng cộng có x sản phẩm</span>
+    <span>Tổng cộng có {{ getLength() }} sản phẩm</span>
     <div class="order-dropdown">
         <select name="order" id="order" class="order-dropdown-control" [ngModel]="order" (ngModelChange)="onValueSelectChange($event)">
             <option value="best_sell">Bán chạy</option>
@@ -20,10 +20,10 @@
     
     <!-- <app-button-categogy-brand brand-name="Dell"></app-button-categogy-brand> -->
 
-    <button class="text-delete-fill">Xóa tất cả</button>
+    <button class="text-delete-fill" (click)="deleteFilter()">Xóa tất cả</button>
 
     <div class="row spacing-top">
-        <div class="product-filter  col-sm-2">
+        <div class="product-filter  col-sm-2" id="filter">
             <ng-container *ngFor="let item of ListFilter">
                 <app-button-category-type [filter-object]="item" (checkedBox)="onFilterChecked($event)"></app-button-category-type>
             </ng-container>
@@ -31,10 +31,13 @@
         <div class="col-sm-10 no-padding">
             <div *ngIf="laptopRenderList; else loading">
                 <div *ngIf="laptopRenderList.length > 0; else notfound"  class="list-laptop">
-                    <ng-container *ngFor="let item of laptopRenderList">
-                        <app-laptop [laptopObject]="item"></app-laptop>
+                    <ng-container *ngFor="let item of laptopRenderList; let i = index">
+                        <app-laptop [laptopObject]="item" *ngIf="i < limitList"></app-laptop>
                     </ng-container>
                 </div>
+                <div class="text-center spacing-top" *ngIf="laptopRenderList.length > 12 && laptopRenderList.length >= limitList">
+                    <button class="text-delete-fill btn-blue" (click)="showMoreClick()">Xem thêm</button>
+                </div> 
                 <ng-template #notfound>
                     <div class="not-found">
                         <img src="../../assets/imgs/no-result.png" alt="">
@@ -48,18 +51,5 @@
                 </div>
             </ng-template>
         </div>       
-        
     </div>
-    <div class="text-center spacing-top">
-        <div class="pagination">
-            <a href="#">&laquo;</a>
-            <a href="#">1</a>
-            <a href="#" class="active">2</a>
-            <a href="#">3</a>
-            <a href="#">4</a>
-            <a href="#">5</a>
-            <a href="#">6</a>
-            <a href="#">&raquo;</a>
-        </div>
-    </div>   
 </div>

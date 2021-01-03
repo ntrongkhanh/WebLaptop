@@ -1,6 +1,6 @@
 <div class="product-info-container">
      <div class="product-title">
-          <h2>Asus ROG Zephyrus G15</h2>
+          <h2>{{ laptopObject.name }}</h2>
           <div class="star">
                <i class="fas fa-star"></i>
                <i class="fas fa-star"></i>
@@ -24,7 +24,6 @@
                     <div class="img-col" *ngFor="let item of listImage; let indexOfItem = index"
                          (click)="handleClickImg($event, indexOfItem)" [ngClass]="isActived(indexOfItem)">
                          <img [src]="item" alt="">
-
                     </div>
      
                     <div class="right-arrow" (click)="increaseIndex()">
@@ -40,7 +39,7 @@
                               Vi xử lý:
                          </div>
                          <p class="product-info__description">
-                              {{product.cpu}}
+                              {{laptopObject.cpu}}
                          </p>
                     </div>
                     
@@ -49,7 +48,7 @@
                               RAM:
                          </div>
                          <p class="product-info__description">
-                              {{product.ram}}
+                              {{laptopObject.ram}}
                          </p>
                     </div>
      
@@ -58,7 +57,7 @@
                               Màn hình:
                          </div>
                          <p class="product-info__description">
-                              {{product.monitor}}
+                              {{laptopObject.screen}}
                          </p>
                     </div>
      
@@ -67,7 +66,7 @@
                               Card đồ họa:
                          </div>
                          <p class="product-info__description">
-                              {{product.videoCard}}
+                              {{laptopObject.graphicCard}}
                          </p>
                     </div>
      
@@ -76,7 +75,7 @@
                               Lưu trữ:
                          </div>
                          <p class="product-info__description">
-                              {{product.storage}}
+                              {{laptopObject.storage}}
                          </p>
                     </div>
      
@@ -85,7 +84,7 @@
                               Pin:
                          </div>
                          <p class="product-info__description">
-                              {{product.pin}}
+                              {{laptopObject.battery}}
                          </p>
                     </div>
      
@@ -94,7 +93,7 @@
                               Kết nối chính:
                          </div>
                          <p class="product-info__description">
-                              {{product.connector}}
+                              {{laptopObject.port}}
                          </p>
                     </div>
      
@@ -103,7 +102,7 @@
                               Cân nặng:
                          </div>
                          <p class="product-info__description">
-                              {{product.weight}}
+                              {{laptopObject.weight}}
                          </p>
                     </div>
      
@@ -112,19 +111,23 @@
                               Hệ điều hành:
                          </div>
                          <p class="product-info__description">
-                              {{product.os}}
+                              {{laptopObject.os}}
                          </p>
                     </div>
                </div>
 
                <div class="product-info__price">
-                    {{formatCurrency(product.price)}}
+                    {{formatCurrency(laptopObject.price)}}
                </div>
 
                <div class="product-order">
                     <button class="product-order__btn">
                          Đặt hàng ngay
                     </button>
+               </div>
+
+               <div class="keeplayout">
+
                </div>
           </div>
      

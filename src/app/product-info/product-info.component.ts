@@ -1,31 +1,25 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ChangeDetectorRef, OnChanges } from '@angular/core';
+import { LaptopModel } from '../models/laptop.model';
 
 @Component({
   selector: 'app-product-info',
   templateUrl: './product-info.component.html',
   styleUrls: ['./product-info.component.css']
 })
-export class ProductInfoComponent implements OnInit {
+export class ProductInfoComponent implements OnInit, OnChanges {
+  @Input() laptopObject: LaptopModel;
 
   constructor() { }
 
   ngOnInit(): void {
+    // this.listImage.push(this.laptopObject.image);
+  }
+
+  ngOnChanges() {
+    
   }
 
   currentIndex = 0;
-  
-  product = {
-    cpu: "AMD Ryzen 7 4800HS, 8 nhân 16 luồng",
-    ram: "8GB DDR4 3200MHz (Nâng cấp tối đa 24GB)",
-    monitor: '15,6" FHD IPS (1920 x 1080) 144Hz, nhám, 65% sRGB',
-    videoCard:  "Nvidia Geforce GTX 1660Ti 6GB GDDR6",
-    storage: "512GB NVMe (Nâng cấp tối đa 2TB)",
-    pin: "76Wh",
-    connector: "3 x USB-A, 1 x USB-C, 1 x HDMI, 1 x Jack 3.5mm",
-    weight: "2,1Kg",
-    os: "Windows 10 Home SL bản quyền",
-    price: 30000000
-  }
 
   listImage = [
     "https://i.pinimg.com/originals/a8/44/2b/a8442ba710985e938e6d56f1b335c9bf.gif",

@@ -15,6 +15,7 @@
         type="checkbox"
         [value]="item"
         [id]="'id' + item.toLowerCase()"
+        name="checkbox"
         (click)="getTheText($event, this.filter.title)"
       />
       {{ item }}

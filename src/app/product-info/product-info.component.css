@@ -174,3 +174,12 @@ ul.product-policies__description {
 ul.product-policies__description li{
      font-style: italic;
 }
+
+.keeplayout {
+     width: 310px;
+}
+
+@media only screen and (max-width: 1111px) {
+     .keeplayout{
+     }
+}    

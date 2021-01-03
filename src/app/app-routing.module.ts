@@ -11,7 +11,7 @@ const routes: Routes = [
   {path: 'home', component: PageHomeComponent},
   {path: 'category-lap', component: PageCategoryLapComponent},
   {path: 'cart', component: PageCartComponent},
-  {path: 'product-detail', component: PageProductDetailComponent},
+  {path: 'product-detail/:id', component: PageProductDetailComponent},
   {path: 'address-order', component: PageAddressOrderComponent},
   {path: 'payment-method-and-info-order', component: PageInfoAndPaymentMethodComponent},
   {path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -24,4 +24,4 @@ const routes: Routes = [
 //     RouterModule.forRoot(routes)],
 //   exports: [RouterModule]
 // })
-export const AppRoutingModule = RouterModule.forRoot(routes);
+export const AppRoutingModule = RouterModule.forRoot(routes, {scrollPositionRestoration: 'enabled'});

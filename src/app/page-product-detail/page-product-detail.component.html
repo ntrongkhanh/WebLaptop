@@ -1,18 +1,18 @@
 
 <div class="container">
      <div class="nav-address">
-          <a href="#" class="home">
+          <a routerLink="/home" class="home">
               Trang chủ
           </a>
-          <a href="#" class="laptop brand">
+          <a routerLink="/category-lap" class="laptop brand">
               Laptop
           </a>
       </div>
      
-     <app-product-info></app-product-info>
+     <app-product-info [laptopObject]="laptopObject"></app-product-info>
      <!--Product information-->
-     <app-product-introduce></app-product-introduce>
+     <app-product-introduce [laptopObject]="laptopObject"></app-product-introduce>
      <!--Introduce Product-->
-     <app-product-review></app-product-review>
+     <app-product-review [laptopObject]="laptopObject"></app-product-review>
      <!--Review-->
 </div>

@@ -1,6 +1,4 @@
-import { stringify } from '@angular/compiler/src/util';
 import { Component, OnInit, Input, Output } from '@angular/core';
-import { EventEmitter } from '@angular/core';
 import { LaptopModel } from '../models/laptop.model';
 
 @Component({
