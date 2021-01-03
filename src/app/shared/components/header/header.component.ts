@@ -9,6 +9,14 @@ import { LaptopModel } from 'src/app/models/laptop.model';
 })
 export class HeaderComponent implements OnInit {
 
+  email = '';
+  password = '';
+  email_s = '';
+  password_s = '';
+  password_sc = '';
+  errorInput = '';
+  errorInputS = '';
+
   productsInCart: LaptopModel[] = [];
 //UI --------------------------------------
   isSideBarOpen = false;
@@ -124,4 +132,45 @@ export class HeaderComponent implements OnInit {
     return new Intl.NumberFormat('vi-VI', { style: 'currency', currency: 'VND' }).format(number);
   }
 
+
+  signIn() {
+    if (this.email == '' || this.password == '') {
+      this.errorInput = 'Bạn cần điền email và mật khẩu!';
+      console.log(this.errorInput);
+    }
+    else {
+      this.errorInput = '';
+      
+      if (!this.validateEmail(this.email)) {
+        this.errorInput = 'Email không chính xác!';
+      }
+      else {
+        this.errorInput = '';
+
+      }
+      //dang nhap
+    }
+  }
+
+  signUp() {
+    if (this.email_s =='' || this.password_s == '' || this.password_sc == '') {
+      this.errorInputS = 'Bạn cần nhập đầy đủ thông tin!';
+    }
+    else {
+      this.errorInputS = '';
+
+      if (!this.validateEmail(this.email_s)) {
+        this.errorInputS = 'Email không chính xác!';
+      }
+      else {
+        this.errorInputS = '';
+
+      }
+    }
+  }
+
+  validateEmail(email) {
+    const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());  
+  }
 }

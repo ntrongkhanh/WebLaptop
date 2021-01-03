@@ -1,88 +1,272 @@
 <ng-container>
-     <div class="navbar navbar-dark fixed-top">
-         <div class="container">
-             <button class="open-sidebar-btn" (click)="openSideBar()">
-                 <span>&#9776;</span>
-             </button>
-             <div id="logoContainer" [ngClass]="logoClass">
-                 <div class="logo">
-                     <a routerLink="home">
-                         <p style="color: #0099CC;">WA<span style="color: aliceblue">VI</span></p>
-                     </a>
-                 </div>
-             </div>
-             <div class="row col-sm-3 icon-left">
-                 <a routerLink="category-lap" routerLinkActive="active">
-                    <div class="icon-inheader">
-                        <i class="fas fa-laptop"></i>
-                        <span class="text-inheader">Laptop</span>
+  <div class="navbar navbar-dark fixed-top">
+    <div class="container">
+      <button class="open-sidebar-btn" (click)="openSideBar()">
+        <span>&#9776;</span>
+      </button>
+      <div id="logoContainer" [ngClass]="logoClass">
+        <div class="logo">
+          <a routerLink="home">
+            <p style="color: #0099cc">
+              WA<span style="color: aliceblue">VI</span>
+            </p>
+          </a>
+        </div>
+      </div>
+      <div class="row col-sm-3 icon-left">
+        <a routerLink="category-lap" routerLinkActive="active">
+          <div class="icon-inheader">
+            <i class="fas fa-laptop"></i>
+            <span class="text-inheader">Laptop</span>
+          </div>
+        </a>
+        <div class="icon-inheader">
+          <i class="fas fa-headphones"></i>
+          <span class="text-inheader">Phụ kiện</span>
+        </div>
+      </div>
+      <div [ngClass]="searchBoxClass" id="searchBoxDiv">
+        <form>
+          <input
+            type="search"
+            class="form-control search-input"
+            placeholder="Tìm kiếm"
+            aria-label="Search"
+            name="searchBox"
+          />
+          <i class="fas fa-search icon-search"></i>
+        </form>
+      </div>
+      <div [ngClass]="iconRightClass">
+        <div class="icon-inheader cart-dropdown">
+          <a href="cart">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="text-inheader">Giỏ hàng</span>
+          </a>
+          <div class="cart-container">
+            <div *ngIf="productsInCart.length > 0; else empty">
+              <div class="cart-title">
+                Có
+                <p style="color: #00ba06; display: inline">
+                  {{ productsInCart.length }}
+                </p>
+                sản phẩm trong giỏ hàng
+              </div>
+              <ul class="list-product">
+                <li *ngFor="let item of productsInCart">
+                  <img [src]="item.image" [alt]="item.name" />
+                  <div class="item-info-wrapper">
+                    <div class="cart-item-name">
+                      {{ item.name }}
                     </div>
-                 </a>
-                 <div class="icon-inheader">
-                     <i class="fas fa-headphones"></i>
-                     <span class="text-inheader">Phụ kiện</span>
-                 </div>
-             </div>
-             <div [ngClass]="searchBoxClass" id="searchBoxDiv">
-                 <form>
-                     <input type="search" class="form-control search-input" placeholder="Tìm kiếm" aria-label="Search"
-                         name="searchBox" />
-                     <i class="fas fa-search icon-search"></i>
-                 </form>
-             </div>
-             <div [ngClass]="iconRightClass">
-                 <div class="icon-inheader cart-dropdown">
-                     <a href="cart">
-                         <i class="fas fa-shopping-cart"></i>
-                         <span class="text-inheader">Giỏ hàng</span>
-                     </a>
-                     <div class="cart-container">
-                         <div *ngIf="productsInCart.length > 0; else empty">
-                            <div class="cart-title">Có <p style="color: #00BA06; display: inline;">{{productsInCart.length}}</p> sản phẩm trong giỏ hàng</div>
-                            <ul class="list-product">
-                                <li *ngFor="let item of productsInCart">
-                                    <img [src]="item.image" [alt]="item.name">
-                                    <div class="item-info-wrapper">
-                                        <div class="cart-item-name">
-                                            {{item.name}}
-                                        </div>
-                                        <div class="cart-item-price">
-                                            {{formatCurrency(item.price)}}
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                            <div class="cart-total-price">
-                                Tổng cộng: <p class="cart-price">{{formatCurrency(getTotalPrice())}}</p>
-                            </div>
-                         </div>
-                         <ng-template #empty>
-                            <div class="empty-cart">
-                                <img src="../../../../assets/imgs/no-result.png" alt="">
-                                <p>Giỏ hàng trống!</p>
-                            </div>
-                         </ng-template>
-                         <a href="address-order" class="payment-link">
-                             <button class="cart-payment">
-                                 Tiến hành thanh toán
-                             </button>
-                         </a>
-                     </div>
-                 </div>
-                 <div class="icon-inheader user-dropdown">
-                         <i class="fas fa-user-circle"></i>
-                         <span class="text-inheader"></span>
- 
-                         <div class="user-dropdown-container">
-                             <a href="#" class="login">Đăng nhập</a>
-                             <a href="#" class="signin">
-                                 Đăng kí
-                             </a>
-                         </div>
-                 </div>
-             </div>
-         </div>
-     </div>
- 
-     <app-sidebar [isVisible]="isSideBarOpen" (closeSideBar)="closeSideBar()"></app-sidebar>
- </ng-container>
+                    <div class="cart-item-price">
+                      {{ formatCurrency(item.price) }}
+                    </div>
+                  </div>
+                </li>
+              </ul>
+              <div class="cart-total-price">
+                Tổng cộng:
+                <p class="cart-price">{{ formatCurrency(getTotalPrice()) }}</p>
+              </div>
+            </div>
+            <ng-template #empty>
+              <div class="empty-cart">
+                <img src="../../../../assets/imgs/no-result.png" alt="" />
+                <p>Giỏ hàng trống!</p>
+              </div>
+            </ng-template>
+            <a href="address-order" class="payment-link">
+              <button class="cart-payment">Tiến hành thanh toán</button>
+            </a>
+          </div>
+        </div>
+        <div class="icon-inheader user-dropdown">
+          <i class="fas fa-user-circle"></i>
+          <span class="text-inheader"></span>
+
+          <div class="user-dropdown-container">
+            <a
+              href="#"
+              data-toggle="modal"
+              data-target="#loginModal"
+              class="login"
+              >Đăng nhập</a
+            >
+            <a href="#" data-toggle="modal"
+            data-target="#signupModal" class="signin"> Đăng kí </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <app-sidebar
+    [isVisible]="isSideBarOpen"
+    (closeSideBar)="closeSideBar()"
+  ></app-sidebar>
+  <div
+    class="modal fade"
+    id="loginModal"
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="alert alert-danger alert-dismissible fade show" *ngIf="errorInput!=''">
+            <strong>Oops!</strong> {{errorInput}}
+          </div>
+          <div class="form-title">
+            <h4>Đăng nhập</h4>
+          </div>
+          <div class="text-center">
+            <form>
+              <div class="form-group">
+                <input
+                  name="email"
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  placeholder="Email của bạn..."
+                  [(ngModel)]="email"
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  name="password"
+                  type="password"
+                  class="form-control"
+                  id="password1"
+                  placeholder="Mật khẩu..."
+                  [(ngModel)]="password"
+                />
+              </div>
+              <button
+                type="button"
+                class="btn btn-info btn-block btn-round"
+                style="margin-top: 24px"
+                (click)="signIn()"
+              >
+                Đăng nhập
+              </button>
+            </form>
+          </div>
+          <a class="forgot-password"> Quên mật khẩu? </a>
+          <div
+            class="text-center"
+            style="font-size: 0.9rem; margin-top: 16px; margin-bottom: 16px"
+          >
+            HOẶC ĐĂNG NHẬP BẰNG
+
+            <div class="icon-social" style="margin-top: 8px">
+              <div class="icon-social__temp" style="color: rgb(54, 148, 235)">
+                <i class="fab fa-facebook"></i>
+                Facebook
+              </div>
+              <div class="icon-social__temp" style="color: rgb(235, 54, 54)">
+                <i class="fab fa-google"></i>
+                Google
+              </div>
+            </div>
+          </div>
+          <!-- <div class="text-center" style="font-size:0.9rem; margin-bottom: 32px;">
+              Bạn chưa chưa có tài khoản?
+              <a style="color: #0099cc; cursor: pointer;" data-toggle="modal"
+              data-target="#signupModal"> Đăng ký</a>
+          </div> -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--SIGNUP M-->
+  <div
+    class="modal fade"
+    id="signupModal"
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="alert alert-danger alert-dismissible fade show" *ngIf="errorInputS!=''">
+            <strong>Oops!</strong> {{errorInputS}}
+          </div>
+          <div class="form-title">
+            <h4>Đăng ký</h4>
+          </div>
+          <div class="text-center">
+            <form>
+              <div class="form-group">
+                <input
+                  name="email_s"
+                  type="email"
+                  class="form-control"
+                  id="email-signup"
+                  placeholder="Email của bạn..."
+                  [(ngModel)]="email_s"
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  name="password_s"
+                  type="password"
+                  class="form-control"
+                  id="password"
+                  placeholder="Mật khẩu..."
+                  [(ngModel)]="password_s"
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  name="password_sc"
+                  type="password"
+                  class="form-control"
+                  id="password-confirm"
+                  placeholder="Nhập lại mật khẩu..."
+                  [(ngModel)]="password_sc"
+                />
+              </div>
+              <button
+                type="button"
+                class="btn btn-info btn-block btn-round"
+                style="margin-top: 24px"
+                (click)="signUp()"
+              >
+                Đăng ký
+              </button>
+            </form>
+          </div>
+          <div
+            class="text-center"
+            style="font-size: 0.9rem; margin-top: 16px; margin-bottom: 16px"
+          >
+            HOẶC ĐĂNG NHẬP BẰNG
+
+            <div class="icon-social" style="margin-top: 8px">
+              <div class="icon-social__temp" style="color: rgb(54, 148, 235)">
+                <i class="fab fa-facebook"></i>
+                Facebook
+              </div>
+              <div class="icon-social__temp" style="color: rgb(235, 54, 54)">
+                <i class="fab fa-google"></i>
+                Google
+              </div>
+            </div>
+          </div>
+          <!-- <div class="text-center" style="font-size:0.9rem; margin-bottom: 32px;">
+              Bạn có tài khoản?
+              <a style="color: #0099cc; cursor: pointer;" data-toggle="modal"
+              data-target="#loginModal"> Đăng nhập</a>
+          </div> -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+</ng-container>

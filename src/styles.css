@@ -28,25 +28,25 @@ a:hover {
 }
 
 ::-webkit-input-placeholder {
-  color: #70dbff !important;
-  opacity: 0.5 !important;
+  color: #70dbff ;
+  opacity: 0.5 ;
 }
 :-moz-placeholder {
-  color: #70dbff !important;
-  opacity: 0.5 !important;
+  color: #70dbff ;
+  opacity: 0.5 ;
 }
 ::-moz-placeholder {
-  color: #70dbff !important;
-  opacity: 0.5 !important;
+  color: #70dbff ;
+  opacity: 0.5 ;
 }
 :-ms-input-placeholder {
-  color: #70dbff !important;
-  opacity: 0.5 !important;
+  color: #70dbff;
+  opacity: 0.5 ;
 }
 ::placeholder {
   font-style: italic;
-  color: #70dbff !important;
-  opacity: 0.5 !important;
+  color: #70dbff ;
+  opacity: 0.5 ;
 }
 
 .property-web {

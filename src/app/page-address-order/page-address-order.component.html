@@ -13,12 +13,34 @@
     </div>
 </div>
 <div class="container order-body-wrapper">
-    <div class="list-address-wrapper">
+    <!-- <div class="list-address-wrapper">
         <label class="title-address-order">Địa chỉ giao hàng</label>
         <div class="address-order-wrapper">
             <div class="icon-delete-wrapper">
-                <i class="fas fa-times icon-delete"></i>
-            </div>  
+                <button class="icon-delete"><i class="fas fa-times"></i></button>
+            </div> 
+            <div class="row address-content-wrapper">
+                <div class="col-sm-3">
+                    <label class="customer-name">Nguyễn Trọng Khanh</label>
+                    <label>Số điện thoại: 0399.529.209</label>
+                </div>
+                <div class="col-sm-6">
+                    <label>Địa chỉ: Ký túc xá khu A, Đại học quốc gia thành phố Hồ Chí Minh, Phường Đông Hòa, Thị Xã Dĩ
+                        An, Bình Dương</label>
+                </div>
+                <div class="col-sm-3">
+                    <div class="handle-address-wrapper">
+                        <button class="btn-confirm-address" style="visibility:hidden;">Giao đến đây</button>
+                        <button class="btn-update-address">Chỉnh sửa</button>
+                    </div>
+                </div>
+            </div>
+        </div>      
+
+        <div class="address-order-wrapper-not">
+            <div class="icon-delete-wrapper">
+                <button class="icon-delete"><i class="fas fa-times"></i></button>
+            </div> 
             <div class="row address-content-wrapper">
                 <div class="col-sm-3">
                     <label class="customer-name">Nguyễn Trọng Khanh</label>
@@ -35,14 +57,17 @@
                     </div>
                 </div>
             </div>
-        </div>      
-    </div>
-    <div class="add-address-question">
+        </div>    
+
+    </div> -->
+    <!-- <div class="add-address-question">
         <span>Bạn muốn giao hàng đến địa chỉ khác? </span>
         <span> Thêm địa chỉ giao hàng mới</span>
-    </div>
+    </div> -->
     <div class="add-address-form-wrapper">
+      
         <div class="add-address-form">
+            <label class="title-address-order">Địa chỉ giao hàng</label>
             <div>
                 <label class="col-sm-5">Họ và tên</label>
                 <input class="col-sm-7" name="hoTen" type="text" placeholder="Nhập họ tên"/>
@@ -54,34 +79,36 @@
             <div>
                 <label class="col-sm-5">Tỉnh/Thành phố</label>
                 <select class="col-sm-7" name="tinhTP" title="Chọn Tỉnh/Thành phố">
-                    <option value="" disabled selected hidden>Chọn Tỉnh/Thành phố</option>
+                    <option value="" disabled selected hidden class="title-select">Chọn Tỉnh/Thành phố</option>
                 </select>
             </div>
             <div>
                 <label class="col-sm-5">Quận/Huyện</label>
                 <select class="col-sm-7" name="quanHuyen" title="Quận/Huyện">
-                    <option value="" disabled selected hidden>Quận/Huyện</option>
+                    <option value="" disabled selected hidden class="title-select">Quận/Huyện</option>
                 </select>
             </div>
             <div>
                 <label class="col-sm-5">Phường/Xã</label>
                 <select class="col-sm-7" name="phuongXa" title="Phường/Xã">
-                    <option value="" disabled selected hidden>Chọn Phường/Xã</option>
+                    <option value="" disabled selected="selected" hidden>Chọn Phường/Xã</option>
+                    <option value="">La</option>
                 </select>
             </div>
             <div>
                 <label class="col-sm-5">Tòa nhà/Tên đường</label>
                 <input class="col-sm-7" name="tenDuong" type="text" placeholder="Nhập địa chỉ cụ thể; VD: 23/11 Nguyễn Văn Mại"/>
             </div>
-            <div class="comfirm-add-address-wrapper">
+            <!-- <div class="comfirm-add-address-wrapper">
                 <button class="btn-cancel-add">Hủy</button>
                 <button class="btn-confirm-add">Giao đến đây</button>
-            </div>
+            </div> -->
         </div>
     </div>
     <a href="payment-method-and-info-order">
         <div class="next-step-btn-wrapper">
             <button class="btn-next-step">Bước tiếp theo</button>
         </div>
-    </a> 
+    </a>
+    
 </div>

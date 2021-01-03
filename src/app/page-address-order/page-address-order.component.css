@@ -48,9 +48,16 @@
     font-weight: bold;
 }
 .address-order-wrapper {
-    border: 1px solid #707070;
+    border: 1px solid #0099CC;
     border-left: 2rem solid #0099CC;
     border-radius: 5px;
+    margin-top: 32px
+}
+.address-order-wrapper-not {
+    border: 1px solid #707070;
+    border-left: 2rem solid #707070;
+    border-radius: 5px;
+    margin-top: 32px
 }
 
 .address-content-wrapper {
@@ -90,13 +97,17 @@
 .icon-delete {
     border-top-right-radius: 5px;
     position: absolute;
-    top: 0;
-    right: 0;
-    height: 20px;
-    width: 20px;
+    top: -1px;
+    right: -1px;
+    height: 26px;
+    width: 26px;
     background-color: #FF5858;
     color: white;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    outline: none;
+    border: none;
 }
 .add-address-question {
     margin-top: 0.5rem;
@@ -135,6 +146,16 @@
     padding-bottom: 0.5rem;
     margin-bottom: 1rem;
 }
+
+.add-address-form input,
+.add-address-form select
+{
+    padding: 4px 8px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid #808080;
+}
+
 .add-address-form div {
     margin-top: 0.5rem;
 }
@@ -154,4 +175,14 @@
 }
 .btn-confirm-add {
     background-color: #0099CC;
+}
+
+select {
+    color: #70707070;
+    
+}
+
+select option {
+    color: black;
+    padding: 4px 8px;
 }
