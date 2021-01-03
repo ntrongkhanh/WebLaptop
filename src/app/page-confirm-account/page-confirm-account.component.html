@@ -1,0 +1,6 @@
+<div *ngIf="!confirmOK;else waitting">
+    <p class="confirm-text">Tạo tài khoản thành công!</p>
+</div>
+<ng-template #waitting>
+    <p class="confirm-text">Waitting!</p>
+</ng-template>
