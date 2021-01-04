@@ -15,7 +15,12 @@ export class PageCartComponent implements OnInit {
   ngOnInit(): void {
     let productsInLocal:LaptopModel[] = JSON.parse(localStorage.getItem('carts'));
 
-    this.products = productsInLocal;
+    if (productsInLocal == null) {
+      this.products = [];
+    }
+    else{
+      this.products = productsInLocal;
+    }
   }
 
   getTotalPrice() {
@@ -29,5 +34,13 @@ export class PageCartComponent implements OnInit {
 
   formatCurrency(number) {
     return new Intl.NumberFormat('vi-VI', { style: 'currency', currency: 'VND' }).format(number);
+  }
+
+  removeProduct(e) {
+    let indexToRemove = this.products.findIndex(pro => pro.id == e);
+    this.products.splice(indexToRemove, 1);
+
+    localStorage.setItem('carts', JSON.stringify(this.products));
+    window.dispatchEvent(new Event('storage'));
   }
 }

@@ -20,6 +20,13 @@ export class PageInfoAndPaymentMethodComponent implements OnInit {
     }
   }
 
+  order() {
+    if (this.products === [] || !this.products) return;
+
+    //check address to return;
+    this.products = [];
+    localStorage.removeItem('carts');
+  }
 
   getConfig(laptopObject: LaptopModel) {
     return this.getCpu(laptopObject) + ", " + this.getRam(laptopObject);

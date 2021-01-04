@@ -57,3 +57,7 @@
     color: white;
     font-weight: bold;
 }
+
+.btn-processing-order:disabled{
+    background-color: #78a8a8;
+}

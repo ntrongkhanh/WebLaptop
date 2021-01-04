@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { LaptopModel } from '../models/laptop.model';
 
 @Component({
@@ -9,6 +9,7 @@ import { LaptopModel } from '../models/laptop.model';
 export class LaptopInCartComponent implements OnInit {
 
   @Input() laptopObject: LaptopModel;
+  @Output() remove = new EventEmitter();
 
   constructor() { }
 
@@ -110,5 +111,9 @@ export class LaptopInCartComponent implements OnInit {
 
   getImageLink() {
     return this.laptopObject.image;
+  }
+
+  removeProduct() {
+    this.remove.emit(this.laptopObject.id);
   }
 }

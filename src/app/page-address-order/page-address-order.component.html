@@ -65,9 +65,11 @@
         <span> Thêm địa chỉ giao hàng mới</span>
     </div> -->
     <div class="add-address-form-wrapper">
-      
         <div class="add-address-form">
             <label class="title-address-order">Địa chỉ giao hàng</label>
+            <div class="alert alert-danger alert-dismissible fade show" *ngIf="errorInput !=''">
+                <strong>Oops!</strong> {{errorInput}}
+              </div>
             <div>
                 <label class="col-sm-5">Họ và tên</label>
                 <input class="col-sm-7" name="hoTen" type="text" placeholder="Nhập họ tên"/>
@@ -78,21 +80,29 @@
             </div>
             <div>
                 <label class="col-sm-5">Tỉnh/Thành phố</label>
-                <select class="col-sm-7" name="tinhTP" title="Chọn Tỉnh/Thành phố">
+                <select id="tinh" class="col-sm-7" name="tinhTP" title="Chọn Tỉnh/Thành phố" (change)="onChangeProvice($event)">
                     <option value="" disabled selected hidden class="title-select">Chọn Tỉnh/Thành phố</option>
+                    <ng-container *ngFor="let province of listProvince">
+                        <option *ngIf="province['Title'] != 'Chưa rõ'" [id]="province['ID']" [value]="province['ID']">{{ province['Title'] }}</option>
+                    </ng-container>
                 </select>
             </div>
             <div>
                 <label class="col-sm-5">Quận/Huyện</label>
-                <select class="col-sm-7" name="quanHuyen" title="Quận/Huyện">
+                <select id="huyen" class="col-sm-7" name="quanHuyen" title="Quận/Huyện" (change)="onChangeProvice_H($event)">
                     <option value="" disabled selected hidden class="title-select">Quận/Huyện</option>
+                    <ng-container *ngFor="let province_H of listProvince_H">
+                        <option *ngIf="province_H['Title'] != 'Chưa rõ'" [id]="province_H['ID']" [value]="province_H['ID']">{{ province_H['Title'] }}</option>
+                    </ng-container>
                 </select>
             </div>
             <div>
                 <label class="col-sm-5">Phường/Xã</label>
-                <select class="col-sm-7" name="phuongXa" title="Phường/Xã">
+                <select id="xa" class="col-sm-7" name="phuongXa" title="Phường/Xã">
                     <option value="" disabled selected="selected" hidden>Chọn Phường/Xã</option>
-                    <option value="">La</option>
+                    <ng-container *ngFor="let province_X of listProvince_X">
+                        <option *ngIf="province_X['Title'] != 'Chưa rõ'" [id]="province_X['ID']" [value]="province_X['ID']">{{ province_X['Title'] }}</option>
+                    </ng-container>
                 </select>
             </div>
             <div>
@@ -105,7 +115,7 @@
             </div> -->
         </div>
     </div>
-    <a href="payment-method-and-info-order">
+    <a (click)="nextStep()">
         <div class="next-step-btn-wrapper">
             <button class="btn-next-step">Bước tiếp theo</button>
         </div>

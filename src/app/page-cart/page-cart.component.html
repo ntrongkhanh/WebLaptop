@@ -4,7 +4,7 @@
         <span class="title-cart">Giỏ hàng</span>
         <span>{{ products.length }} sản phẩm</span>
         <ng-container *ngFor="let item of products">
-            <app-laptop-in-cart [laptopObject]="item"></app-laptop-in-cart>
+            <app-laptop-in-cart [laptopObject]="item" (remove)="removeProduct($event)"></app-laptop-in-cart>
         </ng-container>
     </div>
     <div class="col-sm-3 total">
@@ -17,6 +17,6 @@
                 <label class="vat-info">Giá đã bao gồm VAT nếu có</label>
             </div>        
         </div>
-        <a routerLink="/address-order"><button class="btn-processing-order">Tiến hành đặt hàng</button></a>
+        <a routerLink="/address-order"><button class="btn-processing-order" [disabled]="products == null || !products.length">Tiến hành đặt hàng</button></a>
     </div>
 </div>

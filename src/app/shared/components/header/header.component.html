@@ -204,6 +204,16 @@
             <form>
               <div class="form-group">
                 <input
+                  name="name_s"
+                  type="text"
+                  class="form-control"
+                  id="name-signup"
+                  placeholder="Tên của bạn..."
+                  [(ngModel)]="name_s"
+                />
+              </div>
+              <div class="form-group">
+                <input
                   name="email_s"
                   type="email"
                   class="form-control"
@@ -234,8 +244,9 @@
               </div>
               <button
                 type="button"
-                class="btn btn-info btn-block btn-round"
+                class="btn btn-info btn-block btn-round btn-maxheight"
                 style="margin-top: 24px"
+                id="btn-signup"
                 (click)="signUp()"
               >
                 Đăng ký

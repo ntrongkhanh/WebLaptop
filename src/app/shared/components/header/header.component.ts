@@ -1,6 +1,8 @@
+import { HttpClient } from '@angular/common/http';
 import { HostListener, Input, Output } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import { LaptopModel } from 'src/app/models/laptop.model';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -11,6 +13,8 @@ export class HeaderComponent implements OnInit {
 
   email = '';
   password = '';
+
+  name_s='';
   email_s = '';
   password_s = '';
   password_sc = '';
@@ -43,7 +47,7 @@ export class HeaderComponent implements OnInit {
 
   public innerWidth: any;
   
-  constructor() { }
+  constructor(private authSrv: AuthService) { }
 
   ngOnInit(): void {
     this.innerWidth = window.innerWidth;
@@ -153,7 +157,7 @@ export class HeaderComponent implements OnInit {
   }
 
   signUp() {
-    if (this.email_s =='' || this.password_s == '' || this.password_sc == '') {
+    if (this.name_s == '' || this.email_s =='' || this.password_s == '' || this.password_sc == '') {
       this.errorInputS = 'Bạn cần nhập đầy đủ thông tin!';
     }
     else {
@@ -162,9 +166,30 @@ export class HeaderComponent implements OnInit {
       if (!this.validateEmail(this.email_s)) {
         this.errorInputS = 'Email không chính xác!';
       }
+      else if (this.password_s != this.password_sc) {
+        this.errorInputS = 'Mật khẩu không khớp!';
+      }
       else {
         this.errorInputS = '';
 
+        //get info
+        let name:string = this.name_s;
+        let email:string = this.email_s;
+        let password:string = this.password_s;
+
+        let btn = document.getElementById("btn-signup");
+        btn.innerHTML = '<img src="../../assets/imgs/loading-btn.svg" style="height:38px" alt="">';
+        (btn as HTMLInputElement).disabled = true;
+
+        this.authSrv.postRegister(name, email, password).subscribe(result => {
+          console.log(result);
+          if (result['data'] == 'Success') {
+            btn.innerHTML = 'Đăng ký';
+            (btn as HTMLInputElement).disabled = false;
+
+            //chuyen huong
+          }
+        });
       }
     }
   }

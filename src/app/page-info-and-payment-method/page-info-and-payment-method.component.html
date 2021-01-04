@@ -16,7 +16,7 @@
     <div class="payment-method-wrapper">
         <label class="title-payment-method">Phương thức thanh toán</label>
         <div class="radio-payment-wrapper">
-            <input type="radio" name="payment" id="cod" value="cod"/>
+            <input type="radio" name="payment" id="cod" value="cod" checked/>
             <label for="cod">Thanh toán tiền mặt khi nhận hàng</label><br>
             <input type="radio" name="payment" id="atm" value="atm"/>
             <label for="atm">Qua thẻ ATM / Internet banking</label><br>
@@ -67,7 +67,7 @@
         </div>
     </div>
     <div class="confirm-order-btn-wrapper">
-        <a href="home"><button class="confirm-order-btn">Đặt hàng</button></a>
+        <a href="home"><button class="confirm-order-btn" (click)="order()">Đặt hàng</button></a>
     </div> 
     <div class="notting-order-wrapper">
         <label class="order-note">Vui lòng kiểm tra kĩ thông tin đơn hàng trước khi tiến hàng Đặt hàng</label>

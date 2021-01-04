@@ -311,7 +311,13 @@
     border-radius: 5px;
     border: 1px solid  #773737;
 }
+.btn-maxheight {
+    height: 38px;
+}
 
+.btn-maxheight img{
+    height: 38px;
+}
  @media screen and (max-width: 1026px) {
  
      .open-sidebar-btn {

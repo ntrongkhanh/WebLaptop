@@ -1,0 +1,22 @@
+{
+     "/api/*" :{
+          "target": "https://thongtindoanhnghiep.co",
+          "secure": false,
+          "changeOrigin": true
+     },
+     "/api/city/" :{
+          "target": "https://thongtindoanhnghiep.co",
+          "secure": false,
+          "changeOrigin": true
+     },
+     "/api/district/": {
+          "target": "https://thongtindoanhnghiep.co",
+          "secure": false,
+          "changeOrigin": true
+     },
+     "/api/auth/*": {
+          "target": "http://localhost:8080",
+          "secure": false,
+          "changeOrigin": true
+     }
+}
