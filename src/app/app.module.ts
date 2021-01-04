@@ -37,6 +37,7 @@ import { OrderPipe } from './pipes/order.pipe';
 import { FilterPipe } from './pipes/filter.pipe';
 import { PageInfoAndPaymentMethodComponent } from './page-info-and-payment-method/page-info-and-payment-method.component';
 import { SharedModule } from './shared/shared.module';
+import { PageConfirmAccountComponent } from './page-confirm-account/page-confirm-account.component';
 
 @NgModule({
   declarations: [
@@ -66,6 +67,7 @@ import { SharedModule } from './shared/shared.module';
     OrderPipe,
     FilterPipe,
     PageInfoAndPaymentMethodComponent,
+    PageConfirmAccountComponent,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   imports: [
