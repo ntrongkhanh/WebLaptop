@@ -281,4 +281,18 @@ export class HeaderComponent implements OnInit {
     const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(String(email).toLowerCase());  
   }
+
+  //search 
+
+  submitSearch() {
+    let param = document.getElementById("searchBox") as HTMLInputElement;
+
+    window.open("category-lap/?searchBox=" + param.value, "_self")
+  }
+
+  keyUpEvent(e) {
+    if (e.keyCode === 13) {
+      this.submitSearch();
+    }
+  }
 }

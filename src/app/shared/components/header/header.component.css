@@ -88,6 +88,7 @@
      color: #D6D6D6;
      display: inline-block;
      margin-left: -32px;
+     cursor: pointer;
  }
  
  .open-sidebar-btn{

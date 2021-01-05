@@ -33,8 +33,12 @@
             placeholder="Tìm kiếm"
             aria-label="Search"
             name="searchBox"
+            id ="searchBox"
+            (keyup)="keyUpEvent($event)"
           />
-          <i class="fas fa-search icon-search"></i>
+          <div class="icon-search" (click)="submitSearch()">
+            <i class="fas fa-search"></i>
+          </div>
         </form>
       </div>
       <div [ngClass]="iconRightClass">

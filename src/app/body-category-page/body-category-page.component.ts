@@ -46,6 +46,8 @@ export class BodyCategoryPageComponent implements OnInit {
   ngOnInit(): void {
     this.filterPipe = new FilterPipe();
     this.getLaptops();
+
+
   }
 
   getLength() {
@@ -102,8 +104,7 @@ export class BodyCategoryPageComponent implements OnInit {
         
         this.laptopRenderList = this.filterPipe.transform(this.laptops, this.filterObj);
       }
-
-      if (searchParams.has('price')) {
+      else if (searchParams.has('price')) {
         let filterPrice = searchParams.get('price');
 
         if (filterPrice == "_10"){
@@ -138,6 +139,15 @@ export class BodyCategoryPageComponent implements OnInit {
         }
         
         this.laptopRenderList = this.filterPipe.transform(this.laptops, this.filterObj);
+      }
+      //searchBox Element
+      else if (searchParams.has('searchBox')) {
+        let strToSearch = searchParams.get('searchBox');
+        this.laptopRenderList = this.laptopRenderList.filter(laptop => {
+          console.log(laptop.name.toLowerCase().includes(strToSearch.toLowerCase()));
+          return (laptop.name.toLowerCase().includes(strToSearch.toLowerCase()) || 
+                  laptop.manufacturer.toLowerCase().includes(strToSearch.toLowerCase()));
+        });
       }
     });
   }
