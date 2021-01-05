@@ -295,4 +295,12 @@ export class HeaderComponent implements OnInit {
       this.submitSearch();
     }
   }
+
+  removeProduct(laptop: LaptopModel) {
+    let indexToRemove = this.productsInCart.findIndex(pro => pro.id == laptop.id);
+    this.productsInCart.splice(indexToRemove, 1);
+
+    localStorage.setItem('carts', JSON.stringify(this.productsInCart));
+    window.dispatchEvent(new Event('storage'));
+  }
 }
