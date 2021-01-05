@@ -9,7 +9,7 @@ export class AuthService {
 
   constructor(private httpClient: HttpClient) { }
 
-  postRegister(name:string, email: string, password:string, ) {
+  postRegister(name:string, email: string, password:string) {
     //link api
     //generate model
     let dto = {
@@ -26,5 +26,22 @@ export class AuthService {
     const body = JSON.stringify(dto); 
     
     return this.httpClient.post(this.url + "create", body, { headers: headers });
+  }
+
+  postLogin(email: string, password:string) {
+    let dto = {
+      "active": true,
+      "admin": true,
+      "email": email,
+      "id": 0,
+      "name": "string",
+      "password": password,
+      "token": "string"
+    }
+
+    const headers = { 'Content-Type': 'application/json' };
+    const body = JSON.stringify(dto); 
+    
+    return this.httpClient.post(this.url + "login", body, { headers: headers });
   }
 }

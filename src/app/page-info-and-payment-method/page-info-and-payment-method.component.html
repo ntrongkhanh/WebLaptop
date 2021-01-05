@@ -33,12 +33,12 @@
                 <label class="title-label">Địa chỉ giao hàng:</label>
                 <br>
                 <div class="name-and-address">
-                    <label style="font-weight: bold;">Nguyễn Trọng Khanh</label>
+                    <label style="font-weight: bold;">{{ getAddress__name() }}</label>
                     <span>, </span>
-                    <label>Ký túc xá khu A, Đại học quốc gia thành phố Hồ Chí Minh, Phường Đông Hòa, Thị Xã Dĩ An, Bình Dương</label>
+                    <label>{{ getAddress() }}</label>
                     <br>
                 </div>  
-                <label>Điện thoại: 0399.529.209</label>
+                <label>Điện thoại: {{ getAddress__phone() }}</label>
             </div>
             <div class="col-sm-2 change-btn-wrapper">
                 <a href="address-order">
@@ -63,11 +63,11 @@
                 <a href="cart">
                     <button class="change-btn">Thay đổi</button>
                 </a>
-            </div>  
+            </div>
         </div>
     </div>
     <div class="confirm-order-btn-wrapper">
-        <a href="home"><button class="confirm-order-btn" (click)="order()">Đặt hàng</button></a>
+        <a><button class="confirm-order-btn" (click)="order()">Đặt hàng</button></a>
     </div> 
     <div class="notting-order-wrapper">
         <label class="order-note">Vui lòng kiểm tra kĩ thông tin đơn hàng trước khi tiến hàng Đặt hàng</label>

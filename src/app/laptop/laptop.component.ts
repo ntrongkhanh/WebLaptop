@@ -137,4 +137,10 @@ export class LaptopComponent implements OnInit {
   getImageLink() {
     return this.laptopObject.image;
   }
+
+  getThumbnail() {
+    let arrImg = this.laptopObject.image.split(",");
+
+    return arrImg[0];
+  }
 }

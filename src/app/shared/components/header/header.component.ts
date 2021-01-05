@@ -3,6 +3,7 @@ import { HostListener, Input, Output } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import { LaptopModel } from 'src/app/models/laptop.model';
 import { AuthService } from 'src/app/services/auth.service';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-header',
@@ -10,6 +11,8 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+
+  username = '';
 
   email = '';
   password = '';
@@ -47,9 +50,29 @@ export class HeaderComponent implements OnInit {
 
   public innerWidth: any;
   
-  constructor(private authSrv: AuthService) { }
+  constructor(private authSrv: AuthService, private userSrv: UserService) { }
 
   ngOnInit(): void {
+    //xac thuc tai khoan
+    let okpart = document.getElementById("ok-part");
+    okpart.style.display = "none";
+    let signinpart = document.getElementById("signin-part");
+
+    if (localStorage.getItem('wavi-token')) {
+      let token = JSON.parse(localStorage.getItem('wavi-token'));
+      this.userSrv.getUser(token['token']).subscribe(result => {
+        console.log(result);
+        
+        this.username = result['data']['name'];
+        okpart.style.display = "block";
+        signinpart.style.display = "none";
+      }, err => {
+        console.log(err);
+        okpart.style.display = "none";
+        signinpart.style.display = "block";
+      });
+    }
+
     this.innerWidth = window.innerWidth;
     this.onResponsive();
     window.addEventListener('storage', () => {
@@ -68,7 +91,12 @@ export class HeaderComponent implements OnInit {
       this.productsInCart = cart;
     }
   }
-  
+
+  getThumbnailLaptop(laptopObj: LaptopModel) {
+    let arrImg = laptopObj.image.split(",");
+
+    return arrImg[0];
+  }
 
   @HostListener('window:resize', ['$event']) 
   onResize(event) {
@@ -151,6 +179,26 @@ export class HeaderComponent implements OnInit {
       else {
         this.errorInput = '';
 
+        let email:string = this.email;
+        let password:string = this.password;
+
+        let btn = document.getElementById("btn-signin");
+        btn.innerHTML = '<img src="../../assets/imgs/loading-btn.svg" style="height:38px" alt="">';
+        (btn as HTMLInputElement).disabled = true;
+
+        this.authSrv.postLogin(email, password).subscribe(result => {
+          console.log(result);
+
+          window.localStorage.setItem('wavi-token', JSON.stringify(result));
+          window.open("home", "_self");
+          
+          // btn.innerHTML = 'Đăng nhập';
+          // (btn as HTMLInputElement).disabled = false;
+        }, err => {
+          this.errorInput = "Thông tin tài khoản, mật khẩu không chính xác.";
+          (btn as HTMLInputElement).disabled = false;
+          btn.innerHTML = 'Đăng nhập';
+        });
       }
       //dang nhap
     }
@@ -187,10 +235,45 @@ export class HeaderComponent implements OnInit {
             btn.innerHTML = 'Đăng ký';
             (btn as HTMLInputElement).disabled = false;
 
+            let text = document.createTextNode('Đã đăng ký thành công! Vui lòng kiểm tra email xác thực tài khoản.');
+            let parent = document.getElementById("form-signin");
+            parent.appendChild(text);
+            parent.style.fontSize = "0.9rem";
+
+
             //chuyen huong
+          }
+          else if (result['data'] == 'EMAIL ALREADY EXIST'){
+            this.errorInputS = 'Email đã tồn tại';
+          }
+          else if (result['data'] == 'MAILLING FAILED') {
+            this.errorInputS = 'Xin lỗi! Server gặp một tý trục trặc.';
           }
         });
       }
+    }
+  }
+
+  logout() {
+    let okpart = document.getElementById("ok-part");
+    okpart.style.display = "none";
+    let signinpart = document.getElementById("signin-part");
+
+    //xóa token tại server
+    if (localStorage.getItem('wavi-token')) {
+      let token = JSON.parse(localStorage.getItem('wavi-token'));
+      this.userSrv.removeToken(token['token']).subscribe(result => {
+        console.log(result);
+        
+        okpart.style.display = "none";
+        signinpart.style.display = "block";
+      }, err => {
+        console.log(err);
+      });
+
+      //xóa token tại client
+
+      localStorage.removeItem('wavi-token');
     }
   }
 

@@ -113,6 +113,12 @@ export class LaptopInCartComponent implements OnInit {
     return this.laptopObject.image;
   }
 
+  getThumbnail() {
+    let arrImg = this.laptopObject.image.split(",");
+
+    return arrImg[0];
+  }
+
   removeProduct() {
     this.remove.emit(this.laptopObject.id);
   }

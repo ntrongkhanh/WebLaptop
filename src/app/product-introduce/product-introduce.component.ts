@@ -21,6 +21,18 @@ export class ProductIntroduceComponent implements OnInit {
     console.log(e)
   }
 
+  addToCart() {
+    let cartLocal: LaptopModel[] = JSON.parse(localStorage.getItem('carts'));
+    
+    if (!cartLocal) {
+      cartLocal = [];
+     
+    }
+    cartLocal.push(this.laptopObject);
+    localStorage.setItem('carts', JSON.stringify(cartLocal));
+    window.dispatchEvent(new Event('storage'));
+  }
+
   listRelateProduct = [
     {
       price: 29000000,

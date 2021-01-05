@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LaptopModel } from '../models/laptop.model';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-page-info-and-payment-method',
@@ -8,9 +9,11 @@ import { LaptopModel } from '../models/laptop.model';
 })
 export class PageInfoAndPaymentMethodComponent implements OnInit {
 
+  address: string = '';
+
   products: LaptopModel[] =[];
 
-  constructor() { }
+  constructor(private userSrv: UserService) { }
 
   ngOnInit(): void {
     let inLocal:LaptopModel[] = JSON.parse(localStorage.getItem('carts'));
@@ -20,12 +23,87 @@ export class PageInfoAndPaymentMethodComponent implements OnInit {
     }
   }
 
+  getAddress() {
+    let addressLocal = JSON.parse(localStorage.getItem('address'));
+    if (addressLocal == null) return;
+
+    return (addressLocal['home'] + ", " + addressLocal['province_x'] + ", " + addressLocal['province_h'] + ", " + addressLocal['province']);
+  }
+
+  getAddress__name() {
+    let addressLocal = JSON.parse(localStorage.getItem('address'));
+    if (addressLocal == null) return;
+
+    return addressLocal['name'];
+  }
+
+  getAddress__phone() {
+    let addressLocal = JSON.parse(localStorage.getItem('address'));
+    if (addressLocal == null) return;
+
+    return addressLocal['phone'];
+  }
+
   order() {
     if (this.products === [] || !this.products) return;
 
-    //check address to return;
-    this.products = [];
-    localStorage.removeItem('carts');
+    if (localStorage.getItem('wavi-token')) {
+      let token = JSON.parse(localStorage.getItem('wavi-token'));
+
+      this.userSrv.getUser(token['token']).subscribe(result => {
+        let data = result['data'];
+
+        if (!data['name']) {
+          return;
+        }
+        else {
+          let productDto = [];
+          this.products.forEach(element => {
+            let newObj = {
+              "amount": 1,
+              "id": 0,
+              "idProduct": element.id,
+              "image": "string",
+              "name": "string",
+              "price": 0,
+              "totalPrice": 0
+            }
+
+            productDto.push(newObj);
+          });
+          let body = {
+            "address": this.getAddress(),
+            "cartDetailDtos": productDto,
+            "id": 0,
+            "idUser": 0,
+            "name": this.getAddress__name(),
+            "phone": this.getAddress__phone(),
+            "status": "string",
+            "totalPrice": 0
+          }
+
+          this.userSrv.setOrder(token['token'], body).subscribe(result => {
+            console.log(result);
+          }, err => {
+            console.log("ERR" + err);
+            console.log(body);
+          });
+
+          this.products = [];
+          window.open("home", "_self");
+
+          localStorage.removeItem('carts');
+          localStorage.removeItem('address');
+        }
+      }, err => {
+        console.log(err);
+        return;
+      });
+    }
+    else {
+      let btn_sign_in = document.getElementById("signin-btn");
+      btn_sign_in.click();
+    }
   }
 
   getConfig(laptopObject: LaptopModel) {

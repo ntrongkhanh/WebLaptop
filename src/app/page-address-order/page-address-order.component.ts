@@ -120,6 +120,17 @@ export class PageAddressOrderComponent implements OnInit {
       return;
     }
 
+    let addressData = {
+      name: this.name,
+      phone: this.phone,
+      province: this.province,
+      province_h: this.province_h,
+      province_x: this.province_x,
+      home: this.home,
+    }
+
+    localStorage.setItem('address', JSON.stringify(addressData));
+
     window.open("payment-method-and-info-order", '_self');
   }
 }

@@ -39,9 +39,10 @@
       </div>
       <div [ngClass]="iconRightClass">
         <div class="icon-inheader cart-dropdown">
-          <a href="cart">
+          <a href="cart" class="cart">
             <i class="fas fa-shopping-cart"></i>
             <span class="text-inheader">Giỏ hàng</span>
+            <p class="hidden-number" id="hidden-number" *ngIf="productsInCart.length > 0">{{ productsInCart.length }}</p>
           </a>
           <div class="cart-container">
             <div *ngIf="productsInCart.length > 0; else empty">
@@ -54,7 +55,7 @@
               </div>
               <ul class="list-product">
                 <li *ngFor="let item of productsInCart">
-                  <img [src]="item.image" [alt]="item.name" />
+                  <img [src]="getThumbnailLaptop(item)" [alt]="item.name" />
                   <div class="item-info-wrapper">
                     <div class="cart-item-name">
                       {{ item.name }}
@@ -86,15 +87,30 @@
           <span class="text-inheader"></span>
 
           <div class="user-dropdown-container">
-            <a
-              href="#"
-              data-toggle="modal"
-              data-target="#loginModal"
-              class="login"
-              >Đăng nhập</a
-            >
-            <a href="#" data-toggle="modal"
-            data-target="#signupModal" class="signin"> Đăng kí </a>
+            <div class="ok-part" id="ok-part">
+              chào <strong>{{ username }}</strong>, 
+              <a href="home" class="logout" (click)="logout()">
+                đăng xuất
+              </a>
+            </div>
+            <div class="sigin-part" id="signin-part">
+              <a
+                href="#"
+                data-toggle="modal"
+                data-target="#loginModal"
+                class="login"
+                id="signin-btn"
+                >Đăng nhập</a
+              >
+              <a
+                href="#"
+                data-toggle="modal"
+                data-target="#signupModal"
+                class="signin"
+              >
+                Đăng kí
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -116,8 +132,11 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-body">
-          <div class="alert alert-danger alert-dismissible fade show" *ngIf="errorInput!=''">
-            <strong>Oops!</strong> {{errorInput}}
+          <div
+            class="alert alert-danger alert-dismissible fade show"
+            *ngIf="errorInput != ''"
+          >
+            <strong>Oops!</strong> {{ errorInput }}
           </div>
           <div class="form-title">
             <h4>Đăng nhập</h4>
@@ -148,6 +167,7 @@
                 type="button"
                 class="btn btn-info btn-block btn-round"
                 style="margin-top: 24px"
+                id="btn-signin"
                 (click)="signIn()"
               >
                 Đăng nhập
@@ -194,14 +214,17 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-body">
-          <div class="alert alert-danger alert-dismissible fade show" *ngIf="errorInputS!=''">
-            <strong>Oops!</strong> {{errorInputS}}
+          <div
+            class="alert alert-danger alert-dismissible fade show"
+            *ngIf="errorInputS != ''"
+          >
+            <strong>Oops!</strong> {{ errorInputS }}
           </div>
           <div class="form-title">
             <h4>Đăng ký</h4>
           </div>
           <div class="text-center">
-            <form>
+            <form id="form-signin">
               <div class="form-group">
                 <input
                   name="name_s"
@@ -279,5 +302,4 @@
       </div>
     </div>
   </div>
-
 </ng-container>

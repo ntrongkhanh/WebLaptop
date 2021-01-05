@@ -12,6 +12,7 @@ export class PageConfirmAccountComponent implements OnInit {
   private token: string;
 
   public confirmOK = false;
+  status: string = 'Xin chờ...';
 
   constructor(
     private authAccountService: AuthAccountService,
@@ -33,9 +34,12 @@ export class PageConfirmAccountComponent implements OnInit {
       if (result == 'Success'){
         this.confirmOK = true;
         console.log(this.confirmOK);
+        this.status = "Đã xác thực tài khoản thành công!"
       }else{
-
+        this.status = "Xác thực tài khoản thất bại!"
       }
+    }, err => {
+      this.status = "Đã có lỗi xảy ra."
     })
   }
 }
