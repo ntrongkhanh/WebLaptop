@@ -1,0 +1,26 @@
+:root {
+     font-size: 16px;
+     font-family: 'Poppins', sans-serif;
+     --text-primary: #b6b6b6;
+     --text-secondary: #ececec;
+     --bg-primary: #23232e;
+     --bg-secondary: #141418;
+}
+
+.admin-area {
+     z-index: 10;
+     background-color: white;
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100vw;
+     height: 100vh;
+     display: flex;
+
+     font-family: 'Poppins', sans-serif;
+}
+
+.sidebar {
+     width: 20%;
+     background-color: #23232e;
+}

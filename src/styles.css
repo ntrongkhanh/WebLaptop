@@ -27,28 +27,6 @@ a:hover {
   margin-top: 32px;
 }
 
-::-webkit-input-placeholder {
-  color: #70dbff ;
-  opacity: 0.5 ;
-}
-:-moz-placeholder {
-  color: #70dbff ;
-  opacity: 0.5 ;
-}
-::-moz-placeholder {
-  color: #70dbff ;
-  opacity: 0.5 ;
-}
-:-ms-input-placeholder {
-  color: #70dbff;
-  opacity: 0.5 ;
-}
-::placeholder {
-  font-style: italic;
-  color: #70dbff ;
-  opacity: 0.5 ;
-}
-
 .property-web {
   background-color: #f4f4f4;
 }
@@ -88,6 +66,10 @@ a:hover {
 
 body {
   padding-top: 56px;
+}
+
+.disable-select {
+  -moz-user-select: none; -webkit-user-select: none; -ms-user-select:none; user-select:none;-o-user-select:none;
 }
 
 @media screen and (max-width: 1026px) {

@@ -120,13 +120,15 @@
      box-shadow: 0px 0px 6px #1c1c1c;
      top: 100%;
      right: 0;
-     width: 300px;
      padding-top: 12px;
      visibility: hidden;
      z-index: -1;
      transform: translateY(-1rem);
      transition: all 0.2s ease 0s, visibility linear 0.2s;
      cursor: default;
+ }
+ .cart-container {
+    width: 300px;
  }
  
  .cart-title,
@@ -225,8 +227,8 @@
  }
  
  .user-dropdown-container {
-     width: 200px;
-     padding: 8px 0px;
+     min-width: max-content;
+     padding: 8px 10px;
      text-align: center;
  }
  

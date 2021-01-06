@@ -1,0 +1,25 @@
+<div class="sidebar-control" id="sidebar">
+     <ul class="sidebar-left">
+          <li class="logo">
+               <a routerLink="/admin">
+                    <span style="display: inline; color: #0099cc">WA</span>
+                    <span style="display: inline; color: white">VI</span>
+               </a>
+          </li>
+          <li class="sidebar-item">
+               <a routerLink="/admin/products" class="sidebar-link">
+                    Sản phẩm
+               </a>
+          </li>
+          <li class="sidebar-item">
+               <a routerLink="/admin/orders" class="sidebar-link">
+                    Đơn hàng
+               </a>
+          </li>
+          <li class="sidebar-item">
+               <a class="sidebar-link" (click)="logout()">
+                    Đăng xuất
+               </a>
+          </li>
+     </ul>
+</div>

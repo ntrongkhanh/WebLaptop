@@ -1,0 +1,186 @@
+<div class="admin-area">
+     <app-sidebar class="sidebar"></app-sidebar>
+     <div class="products-area">
+          <button class="add-product" id="toggle-product" (click)="onClickNewProduct()">
+                    Thêm mới
+          </button>
+
+          <div class="new-product-area" id="new-product-area" >
+               <form action="" class="form-new-product">
+                    <div class="input-wrap">
+                         <label for="brand">Thương hiệu: </label>
+                         <select name="brand" id="brand" class="input-style" [(ngModel)]="newLaptopObj['manufacturer']">
+                         <option value="dell">DELL</option>
+                         <option value="asus">ASUS</option>
+                         <option value="hp">HP</option>
+                         <option value="apple">APPLE</option>
+                         <option value="lenovo">LENOVO</option>
+                         <option value="acer">ACER</option>
+                         </select>
+                    </div>
+
+                    <div class="input-wrap">
+                         <label for="category">Mục đích sử dụng: </label>
+                         <select name="category" id="category" class="input-style" [(ngModel)]="newLaptopObj['category']">
+                         <option value="vanphong">Văn phòng</option>
+                         <option value="gaming">Gaming</option>
+                         <option value="caocap">Doanh nhân, cao cấp</option>
+                         </select>
+                    </div>
+
+                    <div class="input-wrap">
+                         <label for="product-type">Loại sản phẩm: </label>
+                         <select name="product-type" id="product-type" class="input-style" [(ngModel)]="newLaptopObj['productType']">
+                         <option value="laptop">Laptop</option>
+                         </select>
+                    </div>
+
+                    <div class="input-wrap">
+                         <label for="image">
+                              Liên kết ảnh: 
+                         </label>
+                         <input class="input-style" type="text" name="image" required [(ngModel)]="newLaptopObj['image']" value=""/>
+                    </div>
+
+                    <div class="input-wrap">
+                         <label for="name">
+                              Tên sản phẩm: 
+                         </label>
+                         <input class="input-style" type="text" name="name" required [(ngModel)]="newLaptopObj['name']" value=""/>
+                    </div>
+
+                    <div class="input-wrap">
+                         <label for="modelCode">
+                              Mã model: 
+                         </label>
+                         <input class="input-style" type="text" name="modelCode" required [(ngModel)]="newLaptopObj['modelCode']" value=""/>
+                    </div>
+
+                    <div class="input-wrap">
+                         <label for="status">
+                              Trạng thái: 
+                         </label>
+                         <input class="input-style" type="text" name="status" required [(ngModel)]="newLaptopObj['status']" value=""/>
+                    </div>
+
+                    <div class="input-wrap">
+                         <label for="amount">
+                              Số lượng: 
+                         </label>
+                         <input class="input-style" type="text" name="amount" required [(ngModel)]="newLaptopObj['amount']" value=""/>
+                    </div>
+
+                    <div class="input-wrap">
+                         <label for="price">
+                             Giá: 
+                         </label>
+                         <input class="input-style" type="text" name="price" required [(ngModel)]="newLaptopObj['price']" value=""/>
+                    </div>
+
+                    <div class="input-wrap">
+                         <label for="national">
+                             Quốc gia: 
+                         </label>
+                         <input class="input-style" type="text" name="national" required [(ngModel)]="newLaptopObj['national']" value=""/>
+                    </div>
+                    <div class="input-wrap">
+                         <label for="weight">
+                             Trọng lượng: 
+                         </label>
+                         <input class="input-style" type="text" name="weight" required [(ngModel)]="newLaptopObj['weight']" value=""/>
+                    </div>
+
+                    <div class="input-wrap">
+                         <label for="guarantee">
+                             Bảo hành:  
+                         </label>
+                         <input class="input-style" type="text" name="guarantee" required [(ngModel)]="newLaptopObj['guarantee']" value=""/>
+                    </div>
+
+                    <div class="input-wrap">
+                         <label for="description">
+                            Mô tả:  
+                         </label>
+                         <input class="input-style" type="text" name="description" required [(ngModel)]="newLaptopObj['description']" value=""/>
+                    </div>
+
+                    <div class="input-wrap">
+                         <label for="color">
+                            Màu sắc:  
+                         </label>
+                         <input class="input-style" type="text" name="color" required [(ngModel)]="newLaptopObj['color']" value=""/>
+                    </div>
+
+                    <div class="input-wrap">
+                         <label for="cpu">
+                            CPU:  
+                         </label>
+                         <input class="input-style" type="text" name="cpu" required [(ngModel)]="newLaptopObj['cpu']" value=""/>
+                    </div>
+
+                    <div class="input-wrap">
+                         <label for="ram">
+                            RAM:  
+                         </label>
+                         <input class="input-style" type="text" name="ram" required [(ngModel)]="newLaptopObj['ram']" value=""/>
+                    </div>
+
+                    <div class="input-wrap">
+                         <label for="screen">
+                            Màn hình:  
+                         </label>
+                         <input class="input-style" type="text" name="screen" required [(ngModel)]="newLaptopObj['screen']" value=""/>
+                    </div>
+
+                    <div class="input-wrap">
+                         <label for="graphicCard">
+                            Card màn hình:  
+                         </label>
+                         <input class="input-style" type="text" name="graphicCard" required [(ngModel)]="newLaptopObj['graphicCard']" value=""/>
+                    </div>
+
+                    <div class="input-wrap">
+                         <label for="storage">
+                            Lưu trữ:  
+                         </label>
+                         <input class="input-style" type="text" name="storage" required [(ngModel)]="newLaptopObj['storage']" value=""/>
+                    </div>
+
+                    <div class="input-wrap">
+                         <label for="battery">
+                            PIN:  
+                         </label>
+                         <input class="input-style" type="text" name="battery" required [(ngModel)]="newLaptopObj['battery']" value=""/>
+                    </div>
+                    <div class="input-wrap">
+                         <label for="port">
+                            Cổng giao tiếp:  
+                         </label>
+                         <input class="input-style" type="text" name="port" required [(ngModel)]="newLaptopObj['port']" value=""/>
+                    </div>
+
+                    <div class="input-wrap">
+                         <label for="os">
+                            Hệ điều hành:  
+                         </label>
+                         <input class="input-style" type="text" name="os" required [(ngModel)]="newLaptopObj['os']" value=""/>
+                    </div>
+
+                    <div class="input-wrap">
+                         <label for="year">
+                            Năm sản xuất:  
+                         </label>
+                         <input class="input-style" type="date" name="year" required [(ngModel)]="newLaptopObj['year']" value=""/>
+                    </div>
+                    <button class="add-product" (click)="addNewLaptop()" style="margin-bottom: 16px;">OK</button>
+                    <div class="alert alert-success"*ngIf="showNoticeAdd" style="margin-right: 16px;">Thêm thành công</div>
+                    <div class="alert alert-danger"*ngIf="showNoticeFail" style="margin-right: 16px;">Thất bại</div>
+               </form>
+          </div>
+          <ul class="list-product">
+               <li class="product-item" *ngFor="let item of listProduct; trackBy: trackItem">
+                    <app-product-view [laptopObj]="item" (deleted)="deleteMe($event)"></app-product-view>
+               </li>
+          </ul>
+     </div>
+</div>

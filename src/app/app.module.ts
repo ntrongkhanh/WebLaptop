@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
 registerLocaleData(localeVi);
 
 import { AppRoutingModule } from './app-routing.module';
+import { AdminModule  } from './admin/admin.module';
 import { AppComponent } from './app.component';
 import { HeadWebComponent } from './head-web/head-web.component';
 import { BodyBannerComponent } from './body-banner/body-banner.component';
@@ -80,6 +81,7 @@ import { PageConfirmAccountComponent } from './page-confirm-account/page-confirm
     }),
     FormsModule,
     SharedModule,
+    AdminModule
   ],
   providers: [
     {provide: LOCALE_ID, useValue: 'vi-VI'},

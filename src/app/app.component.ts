@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router, NavigationStart } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,20 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'WAVI';
+
+  showHead: boolean = false;
+
+  constructor(public router: Router){
+    router.events.forEach((event) => {
+      if (event instanceof NavigationStart) {
+        if (event['url'] == '/admin' || event['url'] == '/admin/login' || event['url'] == '/admin/product'
+        || event['url'] == '/admin/orders' || event['url'].includes('/admin')) {
+          this.showHead = false;
+        } else {
+
+          this.showHead = true;
+        }
+      }
+    });
+  }
 }

@@ -1,0 +1,92 @@
+app-product-view {
+     display: block;
+}
+
+.admin-area {
+     z-index: 10;
+     background-color: white;
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100vw;
+     height: 100vh;
+     display: flex;
+
+     font-family: 'Poppins', sans-serif;
+}
+
+.sidebar {
+     width: 18%;
+     background-color: #23232e;
+}
+
+.list-product {
+     padding: 8px 16px;
+     list-style-type: none;
+}
+
+.products-area {
+     justify-self: stretch;
+     width: 82%;
+     overflow-y: auto;
+}
+
+.product-item {
+     width: 100%;
+}
+
+.img-product {
+     display: inline-block;
+     height: 100%;
+     margin-left: 10px ;
+     margin-right: 16px;
+}
+.add-product {
+     outline: none;
+     border: none;
+
+     width: fit-content;
+     padding: 6px 12px;
+
+     border-radius: 5px;
+     background-color: darkseagreen;
+     color: white;
+
+     margin-left: 16px;
+     margin-top: 16px;
+}
+
+.option {
+     display: flex;
+     width: 100px;
+     justify-content: space-between;
+     margin-left: auto;
+     margin-right: 16px;
+}
+
+.update {
+     color: cadetblue;
+     cursor: pointer;
+}
+
+.delete {
+     color: rgb(221, 101, 101);
+     cursor: pointer;
+}
+
+.new-product-area {
+     margin-top: 16px;
+     margin-left: 16px;
+     transition: .2s;
+}
+
+.input-wrap {
+     display: flex;
+     width: 500px;
+     justify-content: space-between;
+     margin-bottom: 4px;
+}
+
+.input-style {
+     width: 300px;
+}

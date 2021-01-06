@@ -1,0 +1,10 @@
+<div class="form">
+     <form class="login-form" (ngSubmit)="login() ">
+          <input type="text" id="username" class="input-form" name="username" [(ngModel)]="username" placeholder="username">
+          <div class="alert alert-danger notice-alert" *ngIf="!username_oked">username là bắt buộc</div>
+          <input type="password" id="password" class="input-form" name="password" [(ngModel)]="password" placeholder="password">
+          <div class="alert alert-danger notice-alert" *ngIf="!password_oked">password là bắt buộc</div>
+          <input class="btn-submit" value="Log In" (click)="login()" type="button">
+          <div class="alert alert-danger" *ngIf="haveErr">Có lỗi xảy ra! hãy thử lại sau.</div>
+     </form>
+</div>

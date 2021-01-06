@@ -1,0 +1,62 @@
+<div class="laptop-info">
+     <img class="img-product" [src]="getThumbnail()" alt="" />
+     <div class="id-product"><strong>ID</strong> {{laptopObj.id}}</div>
+     <div class="name-product"><strong> Name:</strong> {{laptopObj.name}} {{laptopObj.modelCode}}</div>
+
+     <div class="option">
+          <div class="update update-product disable-select" id="toggle-update" (click)="onUpdateClick($event)">Sửa</div>
+          <div class="delete update-product disable-select" style="background-color: darksalmon;" (click)="onAcceptDelete($event)">Xóa</div>
+     </div>
+</div>
+<div class="update-product-area" id="update-product-area">
+     <form action="" class="form-new-product">
+          <div class="input-wrap">
+               <label for="image"> Liên kết ảnh: </label>
+               <input [(ngModel)]="linkImg" class="input-style" type="text" name="image" value=""/>
+          </div>
+
+          <div class="input-wrap">
+               <label for="name"> Tên sản phẩm: </label>
+               <input [(ngModel)]="name" class="input-style" type="text" name="name" value="" />
+          </div>
+
+          <div class="input-wrap">
+               <label for="modelCode"> Mã model: </label>
+               <input [(ngModel)]="model" class="input-style" type="text" name="modelCode" value="" />
+          </div>
+
+          <div class="input-wrap">
+               <label for="status"> Trạng thái: </label>
+               <input [(ngModel)]="status" class="input-style" type="text" name="status" value="" />
+          </div>
+
+          <div class="input-wrap">
+               <label for="amount"> Số lượng: </label>
+               <input [(ngModel)]="amount" class="input-style" type="text" name="amount" value="" />
+          </div>
+
+          <div class="input-wrap">
+               <label for="price"> Giá: </label>
+               <input [(ngModel)]="price" class="input-style" type="text" name="price" value="" />
+          </div>
+
+          <div class="input-wrap">
+               <label for="description"> Mô tả: </label>
+               <input [(ngModel)]="description" class="input-style" type="text" name="description" value="" />
+          </div>
+
+          <button class="update-product" (click)="onAcceptUpdate($event)">UPDATE</button>
+          <div class="alert alert-success alert-inline">
+               <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+               </button>
+               <strong>OK!</strong> Đã cập nhật thành công!
+          </div>
+          <div class="alert alert-danger alert-inline">
+               <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+               </button>
+               <strong>Oops!</strong> Có lỗi xảy ra!
+          </div>
+     </form>
+</div>

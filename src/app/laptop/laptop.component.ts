@@ -105,16 +105,20 @@ export class LaptopComponent implements OnInit {
     else if (this.laptopObject.cpu.toLowerCase().search("xeon") != -1) {
       return "Intel Xeon";
     }
-    else if (this.laptopObject.cpu.toLowerCase().search("r3") != -1) {
+    else if (this.laptopObject.cpu.toLowerCase().search("r3") != -1 ||
+    this.laptopObject.cpu.toLowerCase().search("ryzen 3") != -1) {
       return "AMD Ryzen 3";
     }
-    else if (this.laptopObject.cpu.toLowerCase().search("r5") != -1) {
+    else if (this.laptopObject.cpu.toLowerCase().search("r5") != -1 ||
+    this.laptopObject.cpu.toLowerCase().search("ryzen 5") != -1) {
       return "AMD Ryzen 5";
     }
-    else if (this.laptopObject.cpu.toLowerCase().search("r7") != -1) {
+    else if (this.laptopObject.cpu.toLowerCase().search("r7") != -1 ||
+    this.laptopObject.cpu.toLowerCase().search("ryzen 7") != -1) {
       return "AMD Ryzen 7";
     }
-    else if (this.laptopObject.cpu.toLowerCase().search("r9") != -1) {
+    else if (this.laptopObject.cpu.toLowerCase().search("r9") != -1 ||
+    this.laptopObject.cpu.toLowerCase().search("ryzen 9") != -1) {
       return "AMD Ryzen 9";
     }
     else if (this.laptopObject.cpu.toLowerCase().search("threadripper") != -1) {

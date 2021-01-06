@@ -14,7 +14,7 @@ export class PageProductDetailComponent implements OnInit {
   laptopObject: LaptopModel;
   idParam;
   subscription: Subscription;
-  linkProductAPI ='https://wavi-backend.herokuapp.com/api/laptop/';
+  linkProductAPI ='http://localhost:8080/api/laptop/';
 
   constructor(private router: Router, 
               private activatedRoute: ActivatedRoute,
