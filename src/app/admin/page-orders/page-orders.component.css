@@ -1,0 +1,21 @@
+app-product-view {
+     display: block;
+}
+
+.admin-area {
+     z-index: 10;
+     background-color: white;
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100vw;
+     height: 100vh;
+     display: flex;
+
+     font-family: 'Poppins', sans-serif;
+}
+
+.sidebar {
+     width: 18%;
+     background-color: #23232e;
+}
