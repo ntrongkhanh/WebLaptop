@@ -7,7 +7,8 @@ import { Observable } from 'rxjs';
 })
 export class AuthAccountService {
 
-  authAccountUrl: string = 'http://localhost:8080/api/auth/confirm';
+  // authAccountUrl: string = 'http://localhost:8080/api/auth/confirm';
+  authAccountUrl: string = 'https://wavi-backend.herokuapp.com/api/auth/confirm';
 
   constructor(private http: HttpClient) { }
 

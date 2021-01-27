@@ -8,7 +8,8 @@ import { LaptopModel } from 'src/app/models/laptop.model';
 })
 export class AdminService {
 
-  baseUrl:string = 'http://localhost:8080/admin/';
+  // baseUrl:string = 'http://localhost:8080/admin/';
+  baseUrl:string = 'https://wavi-backend.herokuapp.com/admin/';
 
   constructor(private http: HttpClient) { }
 
