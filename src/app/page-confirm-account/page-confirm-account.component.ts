@@ -31,7 +31,7 @@ export class PageConfirmAccountComponent implements OnInit {
 
   getAuthAccount() {
     this.authAccountService.getAuthAccount(this.email, this.token).subscribe(result => {
-      if (result == 'Success'){
+      if (result["data"] == 'Success'){
         this.confirmOK = true;
         console.log(this.confirmOK);
         this.status = "Đã xác thực tài khoản thành công!"
