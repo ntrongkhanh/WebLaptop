@@ -6,7 +6,8 @@ import { Injectable } from '@angular/core';
 })
 export class UserService {
   // baseUrl:string = "http://localhost:8080/user/"
-  baseUrl:string = "https://wavi-backend.herokuapp.com/user/"
+  // baseUrl:string = "https://wavi-backend.herokuapp.com/user/"
+  baseUrl:string = "https://34.126.89.62:8080/user/"
 
 
   constructor(private httpClient: HttpClient) { }
