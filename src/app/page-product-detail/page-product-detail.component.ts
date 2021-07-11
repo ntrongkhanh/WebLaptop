@@ -15,7 +15,7 @@ export class PageProductDetailComponent implements OnInit {
   idParam;
   subscription: Subscription;
   // linkProductAPI ='http://localhost:8080/api/laptop/';
-  linkProductAPI ='http://34.126.89.62:8080/api/laptop/';
+  linkProductAPI ='https://34.126.89.62:8443/api/laptop/';
 
   constructor(private router: Router, 
               private activatedRoute: ActivatedRoute,

@@ -10,7 +10,8 @@ export class AdminService {
 
   // baseUrl:string = 'http://localhost:8080/admin/';
   // baseUrl:string = 'http://localhost:8080/admin/';
-  baseUrl:string = 'http://34.126.89.62:8080/admin/';
+  // baseUrl:string = 'http://34.126.89.62:8080/admin/';
+  baseUrl:string = 'https://34.126.89.62:8443/admin/';
 
   constructor(private http: HttpClient) { }
 

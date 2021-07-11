@@ -11,7 +11,7 @@ import { LaptopModel } from '../../models/laptop.model'
 export class LaptopService {
 
   // listLaptopUrl:string = 'https://wavi-backend.herokuapp.com/api/laptop/';
-  listLaptopUrl:string = 'http://34.126.89.62:8080/api/laptop/';
+  listLaptopUrl:string = 'https://34.126.89.62:8443/api/laptop/';
   // listLaptopUrl:string = 'http://localhost:8080/api/laptop/';
 
   constructor(private http: HttpClient) { }

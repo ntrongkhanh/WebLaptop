@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class AuthService {
-  url:string = "http://34.126.89.62:8080/api/auth/";
+  url:string = "https://34.126.89.62:8443/api/auth/";
   // url:string = "http://localhost:8080/api/auth/";
   // url:string = "https://wavi-backend.herokuapp.com/api/auth/";
 

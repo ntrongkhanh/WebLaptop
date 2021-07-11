@@ -1,11 +1,11 @@
 {
      "/api/auth/*": {
-          "target": "http://34.126.89.62:8080",
+          "target": "https://34.126.89.62:8443",
           "secure": false,
           "changeOrigin": true
      },
      "/user/*": {
-          "target": "http://34.126.89.62:8080",
+          "target": "https://34.126.89.62:8443",
           "secure": false,
           "changeOrigin": true
      }
